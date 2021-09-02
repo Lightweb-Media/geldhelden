@@ -11,7 +11,7 @@
 	License URI: http://opensource.org/licenses/mit-license.php
 */
 
-namespace Geldhelden;
+
 
 add_action( 'after_setup_theme', function() {
 	get_template_part( 'inc/classes/Updater' );

@@ -6,7 +6,7 @@
  * @since 1.0
  */
 
-namespace Geldhelden;
+
 
 /**
  * Updater class.
