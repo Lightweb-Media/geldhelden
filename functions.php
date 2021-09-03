@@ -3,7 +3,7 @@
 	Theme Name: Geldhelden
 	Theme URI: https://github/Lightweb-Media/geldhelden
 	Description: Geldhelden Theme 
-	Version: 2.0.0
+	Version: 3.0.0
 	Author: Bastian van Holt
 	Author URI: https://lightweb-media.de
 	Tags: Blank, HTML5, CSS3
