@@ -3,12 +3,16 @@
 	Theme Name: Geldhelden
 	Theme URI: https://github/Lightweb-Media/geldhelden
 	Description: Geldhelden Theme 
+	Version: 2.0.0
 	Author: Bastian van Holt
 	Author URI: https://lightweb-media.de
 	Tags: Blank, HTML5, CSS3
 	License: MIT
 	License URI: http://opensource.org/licenses/mit-license.php
 */
+
+
+
 define ('GELDHELDEN_DIR',get_template_directory());
 require_once(GELDHELDEN_DIR .'/inc/plugin-update-checker/plugin-update-checker.php');
 
@@ -19,7 +23,6 @@ $GeldheldenUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 );
 
 $GeldheldenUpdateChecker->setBranch('main');
-
 if (!isset($content_width))
 {
     $content_width = 900;

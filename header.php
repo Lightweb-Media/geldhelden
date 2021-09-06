@@ -46,12 +46,12 @@
 			<div class="left-content">
 				<div class="youtube-logo">
 					<a href="#">
-						<img src="https://media1-production-mightynetworks.imgix.net/asset/25081701/yio6XoAyT.png?ixlib=rails-0.3.0&auto=format&w=148&h=92&fit=clip&impolicy=ResizeCrop&aspect=fit" alt="YouTube">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.webp" alt="YouTube">
 					</a>
 				</div>
 				<div class="logo">
 					<a href="<?php echo home_url(); ?>">
-						<img src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=84&h=84&fit=crop&crop=faces" alt="Logo" class="logo-img">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/geldhelden-logo.webp" alt="Logo" class="logo-img">
 					</a>
 				</div>
 				<a id="mobile-menu-btn" class="inner-mobile-menu-btn icon-menu-show-24" onclick="OpenMobileMenu();return false"></a>
