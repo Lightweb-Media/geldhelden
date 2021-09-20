@@ -31,10 +31,10 @@
 
 			<div class="right-content">
 				<a class="header-icon icon-search-24" href="#"></a>
-				<a class="header-icon icon-add-boxed-fill-24" href="#"></a>
-				<a class="header-icon icon-chat-fill-24" href="#"></a>
-				<a class="header-icon icon-bell-straight-fill-24" href="#"><span class="notification-count">2</span></a>
-				<a class="header-icon icon-avatar-40" href="#"></a>
+				<a class="header-icon icon-add-boxed-fill-24" href="https://academy.geldhelden.org/feed#"></a>
+				<a class="header-icon icon-chat-fill-24" href="https://academy.geldhelden.org/feed#"></a>
+				<a class="header-icon icon-bell-straight-fill-24" href="https://academy.geldhelden.org/feed#"><span class="notification-count">2</span></a>
+				<a class="header-icon icon-avatar-40" href="https://academy.geldhelden.org/feed#"></a>
 			</div>
 		</div>
 
