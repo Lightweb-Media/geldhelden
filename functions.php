@@ -368,3 +368,6 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
+
+// Require: Report Articles Form
+require_once(GELDHELDEN_DIR .'/backend/report-articles-form.php');
