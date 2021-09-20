@@ -45,12 +45,12 @@
 		<div class="sidebar-left-header">
 			<div class="left-content">
 				<div class="youtube-logo">
-					<a href="#">
+					<a href="https://www.youtube.com/channel/UCF9UDEHzw4GTe_IQHAkyXrg?sub_confirmation=1" title="Zum YouTube Kanal">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.webp" alt="YouTube">
 					</a>
 				</div>
 				<div class="logo">
-					<a href="<?php echo home_url(); ?>">
+					<a href="https://academy.geldhelden.org/" title="Zur Geldhelden Akademie">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/geldhelden-logo.webp" alt="Logo" class="logo-img">
 					</a>
 				</div>
@@ -63,10 +63,10 @@
 			<nav class="sidebar-nav main-nav" role="navigation">
 				<ul id="menu-seitenleisten-menue" class="menu">
 					<li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-9"><a href="<?php echo home_url(); ?> " aria-current="page">Home</a></li>
-					<li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="#">Discovery</a></li>
-					<li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="#">Members</a></li>
-					<li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="#">About</a></li>
-					<li id="menu-item-49" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49"><a href="#">Invite</a></li>
+					<li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="https://academy.geldhelden.org/discovery">Discovery</a></li>
+					<li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="https://academy.geldhelden.org/members">Members</a></li>
+					<li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="https://academy.geldhelden.org/about">About</a></li>
+					<li id="menu-item-49" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49"><a href="https://academy.geldhelden.org/invite">Invite</a></li>
 				</ul>
 			</nav>
 
@@ -74,11 +74,11 @@
 			<hr />
 			<nav class="sidebar-nav second-nav" role="navigation">
 				<ul id="menu-seitenleiste-menue-2" class="menu">
-					<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="#">Topics</a></li>
-					<li id="menu-item-51" class="has-right-content menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="#">Events</a></li>
-					<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="#">Gruppen</a></li>
-					<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a href="#">Kurse</a></li>
-					<li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="#">MoneyHero Token 🚀</a></li>
+					<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="https://academy.geldhelden.org/topics">Topics</a></li>
+					<li id="menu-item-51" class="has-right-content menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="https://academy.geldhelden.org/events">Events</a></li>
+					<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="https://academy.geldhelden.org/groups">Gruppen</a></li>
+					<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a href="https://academy.geldhelden.org/courses">Kurse</a></li>
+					<li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="https://www.moneyhero.io/">MoneyHero Token 🚀</a></li>
 				</ul>
 			</nav>
 
@@ -90,7 +90,7 @@
 
 				<div class="sidebar-chat-title"><? _e('Chat'); ?></div>
 				<ul class="chat-menu">
-					<li class="has-right-content"><a class="chat-room" href="#"><img class="chat-icon" src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=68&h=68&fit=crop&impolicy=Avatar&crop=faces"> Geldhelden Community</a></li>
+					<li class="has-right-content"><a class="chat-room" href="https://academy.geldhelden.org/chats/2071480"><img class="chat-icon" src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=68&h=68&fit=crop&impolicy=Avatar&crop=faces"> Geldhelden Community</a></li>
 				</ul>
 
 				<div class="sidebar-chat-title sidebar-chat-online"><? _e('Online now'); ?><span class="online-now"></span></div>
