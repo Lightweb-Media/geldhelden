@@ -3,7 +3,7 @@
 	Theme Name: Geldhelden
 	Theme URI: https://github/Lightweb-Media/geldhelden
 	Description: Geldhelden Theme 
-	Version: 2.1.0
+	Version: 2.1.1
 	Author: Lightweb Media
 	Author URI: https://lightweb-media.de
 	Tags: Blank, HTML5, CSS3
@@ -241,12 +241,6 @@ function html5_blank_view_article($more)
     return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
 }
 
-// Remove Admin bar
-function remove_admin_bar()
-{
-    return false;
-}
-
 // Remove 'text/css' from our enqueued stylesheet
 function html5_style_remove($tag)
 {
@@ -361,7 +355,6 @@ add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove 
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
@@ -371,3 +364,48 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
 
 // Require: Report Articles Form
 require_once(GELDHELDEN_DIR .'/backend/report-articles-form.php');
+
+// Add Footer Widget Areas
+function theme_slug_register_footer_widgets() {
+	// Register Footer Column 1 widget area.
+	register_sidebar( array(
+		'name' => __( 'Footer Column 1', 'geldhelden' ),
+		'id' => 'footer-1',
+		'description' => __( 'Appears on the first footer column.', 'geldhelden' ),
+		'before_widget' => '<aside id="%1$s" class="footer-block-1 widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	// Register Footer Column 2 widget area.
+	register_sidebar( array(
+		'name' => __( 'Footer Column 2', 'geldhelden' ),
+		'id' => 'footer-2',
+		'description' => __( 'Appears on the second footer column.', 'geldhelden' ),
+		'before_widget' => '<aside id="%1$s" class="footer-block-2 widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	// Register Footer Column 3 widget area.
+	register_sidebar( array(
+		'name' => __( 'Footer Column 3', 'geldhelden' ),
+		'id' => 'footer-3',
+		'description' => __( 'Appears on the third footer column.', 'geldhelden' ),
+		'before_widget' => '<aside id="%1$s" class="footer-block-3 widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	// Register Footer Column 3 widget area.
+	register_sidebar( array(
+		'name' => __( 'Footer Column 3', 'geldhelden' ),
+		'id' => 'footer-3',
+		'description' => __( 'Appears on the third footer column.', 'geldhelden' ),
+		'before_widget' => '<aside id="%1$s" class="footer-block-3 widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'theme_slug_register_footer_widgets', 20 );

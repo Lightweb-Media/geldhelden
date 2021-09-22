@@ -9,6 +9,9 @@
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+			<!-- return to main page -->
+			<button class="back-button" onclick="history.back(-1)">&#171; Zurück zu allen Beiträgen</button>
+
 			<!-- post thumbnail -->
 			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -29,7 +32,10 @@
 			<?php /** <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span> */ ?>
 			<!-- /post details -->
 
-			<?php the_content(); // Dynamic Content ?>
+			<?php the_content(); // Dynamic Content ?>			
+			
+			<!-- return to main page -->
+			<button class="back-button" onclick="history.back(-1)">&#171; Zurück zu allen Beiträgen</button>
 
 			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 
