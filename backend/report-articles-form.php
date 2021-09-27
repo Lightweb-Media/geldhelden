@@ -108,6 +108,10 @@ function beitrags_report_form(){
                             </select>
                         </td>
                     </tr>
+                    <tr>
+                        <th scope="row"><label for="posts_amount"><?php _e('Anzahl Beiträge', 'geldhelden'); ?></label></th>
+                        <td><input type="number" name="posts_amount" id="posts_amount" class="regular-text" required></td>
+                    </tr>
                 </tbody>
             </table>
             <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e('Absenden', 'geldhelden') ?>"></p>
@@ -151,6 +155,7 @@ function beitrags_report_form_submission_handler(){
             $email = sanitize_email($_POST['email']);
             $month = sanitize_text_field($_POST['month']);
             $year = sanitize_text_field($_POST['year']);
+            $posts_amount = sanitize_text_field($_POST['posts_amount']);
 
             // Get all posts by current user id
             $query = array(
@@ -173,7 +178,7 @@ function beitrags_report_form_submission_handler(){
                 }
             endwhile;
 
-            // Send only mail, if more than one article > 1000 words
+            // Send only mail, if more than one article > 1000 words 
             if( $articles_over_thousand > 0 ){
 
                 $to = 'hey@moneyhero.io';
@@ -182,7 +187,8 @@ function beitrags_report_form_submission_handler(){
                 $body .= wp_sprintf( __( 'Wallet-ID: %s', 'geldhelden' ), $wallet_id ) . "<br>";
                 $body .= wp_sprintf( __( 'Name: %s', 'geldhelden' ), $user_name ) . "<br>";
                 $body .= wp_sprintf( __( 'E-Mail: %s', 'geldhelden' ), $email ) . "<br>";
-                $body .= wp_sprintf( __( 'Artikel über 1000 Wörter: %d', 'geldhelden' ), $articles_over_thousand ) . "<br>";
+                $body .= wp_sprintf( __( 'Artikel gesamt: %d', 'geldhelden' ), $posts_amount ) . "<br>";
+                $body .= wp_sprintf( __( '- davon Artikel über 1000 Wörter: %d', 'geldhelden' ), $articles_over_thousand ) . "<br>";
                 $body .= wp_sprintf( __( 'Blog: %s - %s', 'geldhelden' ), get_bloginfo( 'name' ), get_site_url() );
 
                 $headers = array('Content-Type: text/html; charset=UTF-8');
