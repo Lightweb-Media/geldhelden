@@ -79,7 +79,7 @@
 				<hr />
 				<nav class="sidebar-nav second-nav" role="navigation">
 					<ul id="menu-seitenleiste-menue-2" class="menu">
-						<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="https://academy.geldhelden.org/topics">Topics</a></li>
+						<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="https://academy.geldhelden.org/members">Members</a></li>
 						<li id="menu-item-51" class="has-right-content menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="https://academy.geldhelden.org/events">Events</a></li>
 						<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="https://academy.geldhelden.org/groups">Gruppen</a></li>
 						<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a href="https://academy.geldhelden.org/courses">Kurse</a></li>
