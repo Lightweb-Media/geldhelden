@@ -65,18 +65,23 @@
 			</div>
 
 			<div class="sidebar-left-nav-wrapper">
+
 				<nav class="sidebar-nav main-nav" role="navigation">
-					<ul id="menu-seitenleisten-menue" class="menu">
-						<li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-9"><a href="<?php echo home_url(); ?> " aria-current="page">Home</a></li>
-						<li id="menu-item-46" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46"><a href="https://academy.geldhelden.org/discovery">Discovery</a></li>
-						<li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="https://academy.geldhelden.org/members">Members</a></li>
-						<li id="menu-item-48" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48"><a href="https://academy.geldhelden.org/about">About</a></li>
-						<li id="menu-item-49" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49"><a href="https://academy.geldhelden.org/invite">Invite</a></li>
-					</ul>
+					<?php
+
+					// Main Menu
+					wp_nav_menu( array( 
+						'theme_location' => 'header-menu', 
+						'menu_id' => 'menu-seitenleisten-menue',
+						'before' => '<div class="menu-link-wrapper">',
+						'after' => '</div>'
+					) ); 
+
+					?>
 				</nav>
 
-
 				<hr />
+
 				<nav class="sidebar-nav second-nav" role="navigation">
 					<ul id="menu-seitenleiste-menue-2" class="menu">
 						<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="https://academy.geldhelden.org/members">Members</a></li>
@@ -86,8 +91,6 @@
 						<li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="https://www.moneyhero.io/">MoneyHero Token 🚀</a></li>
 					</ul>
 				</nav>
-
-
 
 				<hr />
 
