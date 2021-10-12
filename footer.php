@@ -1,3 +1,5 @@
+		<div class="clear"></div>
+        
 		<!-- footer -->
 		<footer class="footer" role="contentinfo">
 			<?php
