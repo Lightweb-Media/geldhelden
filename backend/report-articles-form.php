@@ -151,7 +151,7 @@ function beitrags_report_form(){
                             </select>
                         </td>
                     </tr>
-                    <tr>
+                    <tr> 
                         <th scope="row"><label for="posts_amount"><?php _e('Anzahl Beiträge', 'geldhelden'); ?></label></th>
                         <td><input type="number" name="posts_amount" id="posts_amount" class="regular-text" required></td>
                     </tr>
@@ -159,6 +159,57 @@ function beitrags_report_form(){
             </table>
             <p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e('Absenden', 'geldhelden') ?>"></p>
         </form>
+
+
+        <h2 class="title"><?php _e('Beiträge der letzten 45 Tage', 'geldhelden'); ?></h2>
+
+        <?php 
+        // Get all posts by current user id
+        $query = array(
+            'posts_per_page' => '-1', 
+            'post_status' => 'publish', 
+            'author' => $user_id,
+            'date_query' => array(
+                array(
+                    'after' => '-45 days',
+                    'column' => 'post_date',
+                )
+            )
+        );
+        $author_posts = new WP_Query($query);
+
+        // Show table with all posts for current user
+        if( !empty($author_posts) ){
+        ?>
+
+            <table class="wp-list-table widefat fixed striped table-view-list posts">
+                <thead>
+                    <tr>
+                        <th scope="col" id="title" class="manage-column column-title"><?php _e('Titel', 'geldhelden'); ?></th>
+                        <th scope="col" id="date" class="manage-column column-date"><?php _e('Datum', 'geldhelden'); ?></th>
+                        <th scope="col" id="date" class="manage-column column-date"><?php _e('Wörter', 'geldhelden'); ?></th>	
+                    </tr>
+                </thead>
+                <tbody id="the-list">
+                    <?php
+                    while($author_posts->have_posts()) : $author_posts->the_post();
+                        $post_date = get_the_date();
+                        $post_title = get_the_title();
+                        $number_of_words = number_format( wp_count_words(), 0, '', '.');
+                    ?>
+                    <tr>
+                        <td class="title column-title page-title" data-colname="Titel">
+                            <strong><a class="row-title" href="<?php echo get_the_permalink(); ?>"><?php echo esc_attr( $post_title ); ?></a></strong>
+                        </td>
+                        <td class="date column-date" data-colname="Datum"><?php _e('Veröffentlicht', 'geldhelden'); ?><br><?php echo esc_attr( $post_date ); ?></td>	
+                        <td class="date column-words" data-colname="Wörter"><?php echo wp_sprintf( '%s ' . __( 'Wörter', 'geldhelden' ), esc_attr( $number_of_words ) ); ?></td>		
+                    </tr>
+                    <?php endwhile; ?>
+                </tbody>       
+            </table>
+
+        <?php } ?>
+
     </div>
 
 <?php }
@@ -241,8 +292,8 @@ function beitrags_report_form_submission_handler(){
                     $body .= wp_sprintf( __( 'Wallet-ID: %s', 'geldhelden' ), $wallet_id ) . "<br>";
                     $body .= wp_sprintf( __( 'Name: %s', 'geldhelden' ), $user_name ) . "<br>";
                     $body .= wp_sprintf( __( 'E-Mail: %s', 'geldhelden' ), $email ) . "<br>";
-                    $body .= wp_sprintf( __( 'Artikel gesamt: %d', 'geldhelden' ), $posts_amount ) . "<br>";
-                    $body .= wp_sprintf( __( '- davon Artikel über 1000 Wörter: %d', 'geldhelden' ), $articles_over_thousand ) . "<br>";
+                    $body .= wp_sprintf( __( 'Artikel über 1000 Wörter: %d', 'geldhelden' ), $posts_amount ) . "<br>";
+                    $body .= wp_sprintf( __( '- Prüfung der autom. Berechnung: %d', 'geldhelden' ), $articles_over_thousand ) . "<br>";
                     $body .= wp_sprintf( __( 'Blog: %s - %s', 'geldhelden' ), get_bloginfo( 'name' ), get_site_url() );
 
                     $headers = array('Content-Type: text/html; charset=UTF-8');

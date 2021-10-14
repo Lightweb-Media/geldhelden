@@ -11,8 +11,6 @@
 	License URI: http://opensource.org/licenses/mit-license.php
 */
 
-
-
 define ('GELDHELDEN_DIR',get_template_directory());
 require_once(GELDHELDEN_DIR .'/inc/plugin-update-checker/plugin-update-checker.php');
 
@@ -27,6 +25,49 @@ if (!isset($content_width))
 {
     $content_width = 900;
 }
+
+// Redirect in backend, if language not set
+function redirect_if_lang_not_set(){
+
+    if ( $GLOBALS['pagenow'] != 'wp-login.php' && $GLOBALS['pagenow'] != 'options.php' && is_admin() ) {
+        $geldhelden_language = esc_attr( get_option('geldhelden_language') );
+
+        if( empty($geldhelden_language) ){
+
+            if( isset( $GLOBALS['_GET']['page'] ) && $GLOBALS['_GET']['page'] == 'geldhelden' ){
+                return;
+            }
+
+            wp_redirect( admin_url('/admin.php?page=geldhelden', 'https') );
+            // wp_redirect( 'https://www.onegent.com' );
+            exit;
+
+        }
+    }   
+}
+add_action('init', 'redirect_if_lang_not_set');
+
+// Change Language
+function change_global_locale($locale) {
+    $geldhelden_language = esc_attr( get_option('geldhelden_language') );
+
+    if( isset($geldhelden_language) ){
+        switch_to_locale($geldhelden_language);
+    }
+}
+add_filter('init','change_global_locale');
+
+add_filter('locale', function($locale) {
+
+    $geldhelden_language = esc_attr( get_option('geldhelden_language') );
+    
+    if( isset($geldhelden_language) ){
+        return $geldhelden_language;
+    }else{
+        return $locale;
+    }
+
+});
 
 if (function_exists('add_theme_support'))
 {
@@ -44,7 +85,7 @@ if (function_exists('add_theme_support'))
     add_theme_support('automatic-feed-links');
 
     // Localisation Support
-    load_theme_textdomain('html5blank', get_template_directory() . '/languages');
+    load_theme_textdomain('geldhelden', get_template_directory() . '/languages');
 }
 
 /*------------------------------------*\
@@ -113,9 +154,9 @@ function html5blank_styles()
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+        'header-menu' => __('Header Menü', 'geldhelden'), // Main Navigation
+        'sidebar-menu' => __('Sidebar Menü', 'geldhelden'), // Sidebar Navigation
+        'extra-menu' => __('Extra Menü', 'geldhelden') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -161,8 +202,8 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
-        'name' => __('Widget Area 1', 'html5blank'),
-        'description' => __('Description for this widget-area...', 'html5blank'),
+        'name' => __('Widget Area 1', 'geldhelden'),
+        'description' => __('Beschreibung Widget Area 1', 'geldhelden'),
         'id' => 'widget-area-1',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
@@ -172,8 +213,8 @@ if (function_exists('register_sidebar'))
 
     // Define Sidebar Widget Area 2
     register_sidebar(array(
-        'name' => __('Widget Area 2', 'html5blank'),
-        'description' => __('Description for this widget-area...', 'html5blank'),
+        'name' => __('Widget Area 2', 'geldhelden'),
+        'description' => __('Beschreibung Widget Area 2', 'geldhelden'),
         'id' => 'widget-area-2',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
@@ -238,7 +279,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
+    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('Zum Artikel', 'geldhelden') . '</a>';
 }
 
 // Remove 'text/css' from our enqueued stylesheet
@@ -364,6 +405,9 @@ remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altoget
 
 // Require: Report Articles Form
 require_once(GELDHELDEN_DIR .'/backend/report-articles-form.php');
+
+// Require: Theme settings
+require_once(GELDHELDEN_DIR .'/backend/theme-settings.php');
 
 // Add Footer Widget Areas
 function theme_slug_register_footer_widgets() {

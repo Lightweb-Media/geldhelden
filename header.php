@@ -82,13 +82,50 @@
 
 				<hr />
 
+				<?php
+				$geldhelden_language = esc_attr( get_option('geldhelden_language') );
+
+				if( isset($geldhelden_language) ){
+					switch ($geldhelden_language) {
+
+						// Russian
+						case 'ru_RU':
+							$topics_link = 'https://academy.geldhelden.org/topics';
+							$events_link = 'https://academy.geldhelden.org/events';
+							$groups_link = 'https://academy.geldhelden.org/groups';
+							$courses_link = 'https://academy.geldhelden.org/courses';
+							$token_link = 'https://www.moneyhero.io/';
+							break;
+
+						// English
+						case 'en':
+							$topics_link = 'https://academy.geldhelden.org/topics';
+							$events_link = 'https://academy.geldhelden.org/events';
+							$groups_link = 'https://academy.geldhelden.org/groups';
+							$courses_link = 'https://academy.geldhelden.org/courses';
+							$token_link = 'https://www.moneyhero.io/';
+							break;
+
+						// German
+						default:
+							$topics_link = 'https://academy.geldhelden.org/topics';
+							$events_link = 'https://academy.geldhelden.org/events';
+							$groups_link = 'https://academy.geldhelden.org/groups';
+							$courses_link = 'https://academy.geldhelden.org/courses';
+							$token_link = 'https://www.moneyhero.io/';
+							break;
+
+					}
+				}
+				?>
+
 				<nav class="sidebar-nav second-nav" role="navigation">
 					<ul id="menu-seitenleiste-menue-2" class="menu">
-						<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="https://academy.geldhelden.org/members">Members</a></li>
-						<li id="menu-item-51" class="has-right-content menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="https://academy.geldhelden.org/events">Events</a></li>
-						<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="https://academy.geldhelden.org/groups">Gruppen</a></li>
-						<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a href="https://academy.geldhelden.org/courses">Kurse</a></li>
-						<li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="https://www.moneyhero.io/">MoneyHero Token 🚀</a></li>
+						<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="<?php echo esc_url_raw( $topics_link ); ?>"><?php _e('Themen', 'geldhelden'); ?></a></li>
+						<li id="menu-item-51" class="has-right-content menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="<?php echo esc_url_raw( $events_link ); ?>"><?php _e('Events', 'geldhelden'); ?></a></li>
+						<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="<?php echo esc_url_raw( $groups_link ); ?>"><?php _e('Gruppen', 'geldhelden'); ?></a></li>
+						<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a href="<?php echo esc_url_raw( $courses_link ); ?>"><?php _e('Kurse', 'geldhelden'); ?></a></li>
+						<li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo esc_url_raw( $token_link ); ?>"><?php _e('MoneyHero Token', 'geldhelden'); ?> 🚀</a></li>
 					</ul>
 				</nav>
 
@@ -96,12 +133,12 @@
 
 				<div class="sidebar-chat">
 
-					<div class="sidebar-chat-title"><? _e('Chat'); ?></div>
+					<div class="sidebar-chat-title"><? _e('Chat', 'geldhelden'); ?></div>
 					<ul class="chat-menu">
 						<li class="has-right-content"><a class="chat-room" href="https://academy.geldhelden.org/chats/2071480"><img class="chat-icon" src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=68&h=68&fit=crop&impolicy=Avatar&crop=faces"> Geldhelden Community</a></li>
 					</ul>
 
-					<div class="sidebar-chat-title sidebar-chat-online"><? _e('Online now'); ?><span class="online-now"></span></div>
+					<div class="sidebar-chat-title sidebar-chat-online"><? _e('Online now', 'geldhelden'); ?><span class="online-now"></span></div>
 					<ul class="chat-users">
 						<li><img src="https://assets1-production-mightynetworks.imgix.net/assets/default_user_avatars/default_user_avatar_11-3517b7fbb8075a1fb66d302ee19426062a5e1d51ebf43f1804d074bcb184d81d.jpg?auto=format&w=52&h=52&fit=crop&crop=faces"></li>
 						<li><img src="https://media1-production-mightynetworks.imgix.net/asset/19530540/20210123_155206.jpg?ixlib=rails-0.3.0&fm=jpg&q=100&auto=format&w=52&h=52&fit=crop&crop=faces&impolicy=Avatar"></li>
