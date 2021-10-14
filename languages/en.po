@@ -1,0 +1,389 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-10-14 15:27+0200\n"
+"PO-Revision-Date: 2021-10-14 15:28+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_EN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html;esc_html__;esc_att;esc_attr__;"
+"esc_attr_e;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:10
+msgid "Seite nicht gefunden"
+msgstr "Page not found"
+
+#: 404.php:12
+msgid "Zur Startseite?"
+msgstr "Go to home?"
+
+#: archive.php:7
+msgid "Archive"
+msgstr "Archive"
+
+#: author.php:9
+msgid "Author Archiv für "
+msgstr "Author Archiv for "
+
+#: author.php:15
+msgid "Über "
+msgstr "About "
+
+#: author.php:42 loop.php:22 single.php:31
+msgid "Veröffentlicht von"
+msgstr "Published from"
+
+#: author.php:43
+msgid "Kommentar hinterlassen"
+msgstr "Leave comment"
+
+#: author.php:43
+msgid "1 Comment"
+msgstr "1 Comment"
+
+#: author.php:43
+msgid "% Comments"
+msgstr "% Comments"
+
+#: author.php:62
+msgid "Nichts gefunden."
+msgstr "Not found."
+
+#: backend/report-articles-form.php:36
+msgid "Beitrag-Report"
+msgstr "Article-Report"
+
+#: backend/report-articles-form.php:60
+msgid "Beitrags-Report senden"
+msgstr "Send Article-Report"
+
+#: backend/report-articles-form.php:67
+#, php-format
+msgid ""
+"Anfrage erfolgreich versendet. Sie haben im gewählten Zeitraum %d Beiträge "
+"mit über 1.000 Wörtern veröffentlicht."
+msgstr ""
+"Report successfully sent. You have published %d articles with over 1,000 "
+"words in the selected period."
+
+#: backend/report-articles-form.php:71
+msgid ""
+"Sie haben im gewählten Zeitraum keine Beiträge mit über 1.000 Wörtern "
+"veröffentlicht."
+msgstr ""
+"You have no published articles with over 1,000 words in the selected period."
+
+#: backend/report-articles-form.php:76
+msgid ""
+"Der Beitrags-Report wurde nicht abgeschickt, da dieser für den gewählten "
+"Zeitraum bereits versendet wurde!"
+msgstr ""
+"The contribution report was not sent because it has already been sent for "
+"the selected period!"
+
+#: backend/report-articles-form.php:93
+msgid "Wallet-ID"
+msgstr "Wallet-ID"
+
+#: backend/report-articles-form.php:97
+msgid "Name"
+msgstr "Name"
+
+#: backend/report-articles-form.php:101
+msgid "E-Mail"
+msgstr "E-Mail"
+
+#: backend/report-articles-form.php:105
+msgid "Monat"
+msgstr "Month"
+
+#: backend/report-articles-form.php:127
+msgid "Bitte auswählen..."
+msgstr "Please select…"
+
+#: backend/report-articles-form.php:142
+msgid "Jahr"
+msgstr "Year"
+
+#: backend/report-articles-form.php:155
+msgid "Anzahl Beiträge"
+msgstr "Number of articles"
+
+#: backend/report-articles-form.php:160
+msgid "Absenden"
+msgstr "Send"
+
+#: backend/report-articles-form.php:164
+msgid "Beiträge der letzten 45 Tage"
+msgstr "Posts from the last 45 days"
+
+#: backend/report-articles-form.php:188
+msgid "Titel"
+msgstr "Title"
+
+#: backend/report-articles-form.php:189
+msgid "Datum"
+msgstr "Date"
+
+#: backend/report-articles-form.php:190 backend/report-articles-form.php:205
+msgid "Wörter"
+msgstr "Words"
+
+#: backend/report-articles-form.php:204
+msgid "Veröffentlicht"
+msgstr "Published on"
+
+#: backend/report-articles-form.php:226
+msgid "Leider ist ein Fehler aufgetreten! Bitte versuchen Sie es erneut!"
+msgstr "Sorry, an error has occurred! Please try again!"
+
+#: backend/report-articles-form.php:290
+#, php-format
+msgid "Auszahlung beantragt: %s"
+msgstr "Payment requested: %s"
+
+#: backend/report-articles-form.php:291
+#, php-format
+msgid "Neue Auszahlung beantragt für %d. %d"
+msgstr "New payout requested for %d. %d"
+
+#: backend/report-articles-form.php:292
+#, php-format
+msgid "Wallet-ID: %s"
+msgstr "Wallet-ID: %s"
+
+#: backend/report-articles-form.php:293
+#, php-format
+msgid "Name: %s"
+msgstr "Name: %s"
+
+#: backend/report-articles-form.php:294
+#, php-format
+msgid "E-Mail: %s"
+msgstr "E-Mail: %s"
+
+#: backend/report-articles-form.php:295
+#, php-format
+msgid "Artikel über 1000 Wörter: %d"
+msgstr "Articles over 1000 words: %d"
+
+#: backend/report-articles-form.php:296
+#, php-format
+msgid "- Prüfung der autom. Berechnung: %d"
+msgstr "- Check from the autom. Calculation: %d"
+
+#: backend/report-articles-form.php:297
+#, php-format
+msgid "Blog: %s - %s"
+msgstr "Blog: %s - %s"
+
+#: backend/report-articles-form.php:398
+#, php-format
+msgid ""
+"Denke daran deinen <a href=\"%s\">Beitrags-Report</a> für diesen Monat "
+"abzuschicken!"
+msgstr "Remember to send your <a href=„%s“>article report</a> for this month!"
+
+#: backend/theme-settings.php:9
+msgid "Geldhelden Theme"
+msgstr "Geldhelden Theme"
+
+#: backend/theme-settings.php:37
+msgid "Geldhelden Einstellungen"
+msgstr "Geldhelden Settings"
+
+#: backend/theme-settings.php:49
+msgid "Sprache"
+msgstr "Language"
+
+#: category.php:7
+msgid "Kategorien für "
+msgstr "Categories for "
+
+#: comments.php:3
+msgid "Der Beitrag ist passwortgesichert. Bitte geben Sie das Passwort ein."
+msgstr "The post is password-protected. Please enter the password."
+
+#: comments.php:18
+msgid "Kommentare nicht erlaubt."
+msgstr "Comments not allowed."
+
+#: functions.php:157
+msgid "Header Menü"
+msgstr "Header Menu"
+
+#: functions.php:158
+msgid "Sidebar Menü"
+msgstr "Sidebar Menu"
+
+#: functions.php:159
+msgid "Extra Menü"
+msgstr "Extra Menu"
+
+#: functions.php:205
+msgid "Widget Area 1"
+msgstr "Widget Area 1"
+
+#: functions.php:206
+msgid "Beschreibung Widget Area 1"
+msgstr "Description Widget Area 1"
+
+#: functions.php:216
+msgid "Widget Area 2"
+msgstr "Widget Area 2"
+
+#: functions.php:217
+msgid "Beschreibung Widget Area 2"
+msgstr "Description Widget Area 2"
+
+#: functions.php:282
+msgid "Zum Artikel"
+msgstr "Go to article"
+
+#: functions.php:337
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">says:</span>"
+msgstr "<cite class=„fn“>%s</cite> <span class=„says“>says:</span>"
+
+#: functions.php:340
+msgid "Your comment is awaiting moderation."
+msgstr "Your comment is awaiting moderation."
+
+#: functions.php:346
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s at %2$s"
+
+#: functions.php:346
+msgid "(Edit)"
+msgstr "(Edit)"
+
+#: functions.php:416
+msgid "Footer Column 1"
+msgstr "Footer Column 1"
+
+#: functions.php:418
+msgid "Appears on the first footer column."
+msgstr "Appears on the first footer column."
+
+#: functions.php:426
+msgid "Footer Column 2"
+msgstr "Footer Column 2"
+
+#: functions.php:428
+msgid "Appears on the second footer column."
+msgstr "Appears on the second footer column."
+
+#: functions.php:436 functions.php:446
+msgid "Footer Column 3"
+msgstr "Footer Column 3"
+
+#: functions.php:438 functions.php:448
+msgid "Appears on the third footer column."
+msgstr "Appears on the third footer column."
+
+#: header.php:124
+msgid "Themen"
+msgstr "Topics"
+
+#: header.php:125
+msgid "Events"
+msgstr "Events"
+
+#: header.php:126
+msgid "Gruppen"
+msgstr "Groups"
+
+#: header.php:127
+msgid "Kurse"
+msgstr "Courses"
+
+#: header.php:128
+msgid "MoneyHero Token"
+msgstr "MoneyHero Token"
+
+#: header.php:136
+msgid "Chat"
+msgstr "Chat"
+
+#: header.php:141
+msgid "Online now"
+msgstr "Online now"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:54
+msgid "View details"
+msgstr "View details"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:77
+#, php-format
+msgid "More information about %s"
+msgstr "More information about %s"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr "Check for updates"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:224
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Unknown update checker status „%s“"
+
+#: inc/plugin-update-checker/Puc/v4p11/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "There is no changelog available."
+
+#: index.php:7
+msgid "Aktuelle Artikel"
+msgstr "Recent Articles"
+
+#: loop.php:23
+msgid "Kommentar verfassen"
+msgstr "Write comment"
+
+#: loop.php:23
+msgid "1 Kommentar"
+msgstr "1 comment"
+
+#: loop.php:23
+msgid "% Kommentare"
+msgstr "% comments"
+
+#: loop.php:39 page.php:30 single.php:57
+msgid "Keine Artikel gefunden."
+msgstr "No articles found."
+
+#: search.php:7
+#, php-format
+msgid "%s Suchergebnisse gefunden für "
+msgstr "%s search results found for "
+
+#: searchform.php:3
+msgid "Suchwort eingeben und Enter drücken."
+msgstr "Type in search term and click enter."
+
+#: searchform.php:4
+msgid "Suchen"
+msgstr "Search"
+
+#: single.php:39
+msgid "Tags: "
+msgstr "Tags: "
+
+#: single.php:41
+msgid "Kategorien: "
+msgstr "Categories: "
+
+#: tag.php:7
+msgid "Tag Archiv: "
+msgstr "Tag Archive: "
+
+#, php-format
+#~ msgid "Artikel gesamt: %d"
+#~ msgstr "Total articles: %d"
