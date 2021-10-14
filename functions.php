@@ -1,8 +1,8 @@
 <?php
 /*
-	Theme Name: Geldhelden
-	Theme URI: https://github/Lightweb-Media/geldhelden
-	Description: Geldhelden Theme 
+	Theme Name: MoneyHero
+	Theme URI: https://github/Lightweb-Media/moneyhero
+	Description: MoneyHero Theme 
 	Version: 2.1.1
 	Author: Lightweb Media
 	Author URI: https://lightweb-media.de
@@ -15,9 +15,9 @@ define ('GELDHELDEN_DIR',get_template_directory());
 require_once(GELDHELDEN_DIR .'/inc/plugin-update-checker/plugin-update-checker.php');
 
 $GeldheldenUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/lightweb-media/geldhelden/',
+	'https://github.com/lightweb-media/moneyhero/',
 	__FILE__, //Full path to the main plugin file or functions.php.
-	'geldhelden'
+	'moneyhero'
 );
 
 $GeldheldenUpdateChecker->setBranch('main');
