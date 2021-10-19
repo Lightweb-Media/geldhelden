@@ -51,21 +51,21 @@ function geldhelden_theme_settings(){
 
                         <!-- German -->
                         <label for="geldhelden_language_de" class="fancy-label">
-                            <h3>Deutsch</h3>
+                            <h3><?php _e('Deutsch', 'geldhelden'); ?></h3>
                             <img class="flag" src="<?php echo get_template_directory_uri() . '/img/flags/german.png'; ?>">
                             <input type="radio" name="geldhelden_language" id="geldhelden_language_de" value="de_DE" <?php echo ( isset($geldhelden_language) && $geldhelden_language == 'de_DE' ? 'checked' : ''); ?>>
                         </label>
 
                         <!-- Englisch -->
                         <label for="geldhelden_language_en" class="fancy-label">
-                            <h3>English</h3>
+                            <h3><?php _e('Englisch', 'geldhelden'); ?></h3>
                             <img class="flag" src="<?php echo get_template_directory_uri() . '/img/flags/english.png'; ?>">
                             <input type="radio" name="geldhelden_language" id="geldhelden_language_en" value="en" <?php echo ( isset($geldhelden_language) && $geldhelden_language == 'en' ? 'checked' : ''); ?>>
                         </label>
 
                         <!-- Russisch -->
                         <label for="geldhelden_language_ru" class="fancy-label">
-                            <h3>Русский</h3>
+                            <h3><?php _e('Russisch', 'geldhelden'); ?></h3>
                             <img class="flag" src="<?php echo get_template_directory_uri() . '/img/flags/russian.png'; ?>">
                             <input type="radio" name="geldhelden_language" id="geldhelden_language_ru" value="ru_RU" <?php echo ( isset($geldhelden_language) && $geldhelden_language == 'ru_RU' ? 'checked' : ''); ?>>
                         </label>

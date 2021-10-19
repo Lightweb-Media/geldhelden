@@ -10,7 +10,7 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<!-- return to main page -->
-			<button class="back-button" onclick="history.back(-1)">&#171; Zurück zu allen Beiträgen</button>
+			<button class="back-button" onclick="history.back(-1)">&#171; <?php _e('Zurück zu allen Beiträgen', 'geldhelden'); ?></button>
 
 			<!-- post thumbnail -->
 			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
@@ -34,7 +34,7 @@
 			<?php the_content(); // Dynamic Content ?>			
 			
 			<!-- return to main page -->
-			<button class="back-button" onclick="history.back(-1)">&#171; Zurück zu allen Beiträgen</button>
+			<button class="back-button" onclick="history.back(-1)">&#171; <?php _e('Zurück zu allen Beiträgen', 'geldhelden'); ?></button>
 
 			<?php the_tags( __( 'Tags: ', 'geldhelden' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
 
@@ -42,7 +42,7 @@
 
 			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
-			<?php comments_template(); ?> **/ ?>
+			<?php comments_template(); ?>
 
 		</article>
 		<!-- /article -->
