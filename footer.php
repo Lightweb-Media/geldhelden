@@ -8,7 +8,7 @@
 
 				<div id="footer-widgets-wrap" class="footer-widgets-wrap">
 
-					<div id="footer-widgets" class="footer-widgets"  role="complementary">
+					<div id="footer-widgets" class="footer-widgets" role="complementary">
 
 						<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
 
