@@ -135,7 +135,7 @@
 
 					<div class="sidebar-chat-title"><? _e('Chat', 'geldhelden'); ?></div>
 					<ul class="chat-menu">
-						<li class="has-right-content"><a class="chat-room" href="https://academy.geldhelden.org/chats/2071480"><img class="chat-icon" src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=68&h=68&fit=crop&impolicy=Avatar&crop=faces"><?php _e('Geldhelden Community', 'geldehelden')?> </a></li>
+						<li class="has-right-content"><a class="chat-room" href="https://academy.geldhelden.org/chats/2071480"><img class="chat-icon" src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=68&h=68&fit=crop&impolicy=Avatar&crop=faces"><?php _e('Geldhelden Community', 'geldhelden')?> </a></li>
 					</ul>
 
 					<div class="sidebar-chat-title sidebar-chat-online"><? _e('Online now', 'geldhelden'); ?><span class="online-now"></span></div>
