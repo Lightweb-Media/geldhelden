@@ -45,12 +45,12 @@
 		<div class="sidebar-left-header">
 			<div class="left-content">
 				<div class="youtube-logo">
-					<a href="https://www.youtube.com/channel/UCF9UDEHzw4GTe_IQHAkyXrg?sub_confirmation=1" title="Zum YouTube Kanal">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.webp" alt="YouTube">
+					<a href="https://www.youtube.com/channel/UCF9UDEHzw4GTe_IQHAkyXrg?sub_confirmation=1" title="<?php _e( 'Zum YouTube Kanal', 'geldhelden' );?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.webp" alt="<?php _e( 'YouTube', 'geldhelden' );?>">
 					</a>
 				</div>
 				<div class="logo">
-					<a href="https://academy.geldhelden.org/" title="Zur Geldhelden Akademie">
+					<a href="https://academy.geldhelden.org/" title="<?php _e( 'Zur Geldhelden Akademie', 'geldhelden' );?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/geldhelden-logo.webp" alt="Logo" class="logo-img">
 					</a>
 				</div>
@@ -135,7 +135,7 @@
 
 					<div class="sidebar-chat-title"><? _e('Chat', 'geldhelden'); ?></div>
 					<ul class="chat-menu">
-						<li class="has-right-content"><a class="chat-room" href="https://academy.geldhelden.org/chats/2071480"><img class="chat-icon" src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=68&h=68&fit=crop&impolicy=Avatar&crop=faces"> Geldhelden Community</a></li>
+						<li class="has-right-content"><a class="chat-room" href="https://academy.geldhelden.org/chats/2071480"><img class="chat-icon" src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=68&h=68&fit=crop&impolicy=Avatar&crop=faces"><?php _e('Geldhelden Community', 'geldehelden')?> </a></li>
 					</ul>
 
 					<div class="sidebar-chat-title sidebar-chat-online"><? _e('Online now', 'geldhelden'); ?><span class="online-now"></span></div>
