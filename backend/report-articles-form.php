@@ -73,8 +73,11 @@ function beitrags_report_form(){
             <?php } ?>
         <?php }elseif( isset($_GET['err']) ){ 
 
-            $error_msg = __('Der Beitrags-Report wurde nicht abgeschickt, da dieser für den gewählten Zeitraum bereits versendet wurde!', 'geldhelden');
-
+            if( $_GET['err'] == 'already-sent' ){
+                $error_msg = __('Der Beitrags-Report wurde nicht abgeschickt, da dieser für den gewählten Zeitraum bereits versendet wurde!', 'geldhelden');
+            }elseif( $_GET['err'] == 'too-early' ){
+                $error_msg = __('Der Beitrags-Report wurde nicht abgeschickt, da der gewählte Zeitraum noch nicht vorbei ist!', 'geldhelden');
+            }
             ?>
             <div class="error notice">
                 <p><?php echo $error_msg; ?></p>
@@ -150,10 +153,6 @@ function beitrags_report_form(){
                                 <?php } ?>                       
                             </select>
                         </td>
-                    </tr>
-                    <tr> 
-                        <th scope="row"><label for="posts_amount"><?php _e('Anzahl Beiträge', 'geldhelden'); ?></label></th>
-                        <td><input type="number" name="posts_amount" id="posts_amount" class="regular-text" required></td>
                     </tr>
                 </tbody>
             </table>
@@ -236,7 +235,6 @@ function beitrags_report_form_submission_handler(){
             $email = sanitize_email($_POST['email']);
             $month = sanitize_text_field($_POST['month']);
             $year = sanitize_text_field($_POST['year']);
-            $posts_amount = sanitize_text_field($_POST['posts_amount']);
 
             // Update user details
             update_user_meta( $user_id, 'ra_wallet_id', $wallet_id );
@@ -252,7 +250,19 @@ function beitrags_report_form_submission_handler(){
                 AND year = %d
             ", $user_id, $month, $year ));
 
-            if( isset($get_reports) && !empty($get_reports) ){
+            // Check if current month is set
+            $current_month = date('m');
+            $current_year = date('Y');
+
+            if( $current_month == $month && $current_year == $year ){
+
+                // Redirect user with error, because current month cannot be sent
+                $arr_params = array( 
+                    'page' => 'beitrags-report',
+                    'err' => 'too-early'
+                );
+
+            }elseif( isset($get_reports) && !empty($get_reports) ){
 
                 // Redirect user with error, because report already sent
                 $arr_params = array( 
@@ -292,8 +302,7 @@ function beitrags_report_form_submission_handler(){
                     $body .= wp_sprintf( __( 'Wallet-ID: %s', 'geldhelden' ), $wallet_id ) . "<br>";
                     $body .= wp_sprintf( __( 'Name: %s', 'geldhelden' ), $user_name ) . "<br>";
                     $body .= wp_sprintf( __( 'E-Mail: %s', 'geldhelden' ), $email ) . "<br>";
-                    $body .= wp_sprintf( __( 'Artikel über 1000 Wörter: %d', 'geldhelden' ), $posts_amount ) . "<br>";
-                    $body .= wp_sprintf( __( '- Prüfung der autom. Berechnung: %d', 'geldhelden' ), $articles_over_thousand ) . "<br>";
+                    $body .= wp_sprintf( __( 'Artikel über 1000 Wörter: %d', 'geldhelden' ), $articles_over_thousand ) . "<br>";
                     $body .= wp_sprintf( __( 'Blog: %s - %s', 'geldhelden' ), get_bloginfo( 'name' ), get_site_url() );
 
                     $headers = array('Content-Type: text/html; charset=UTF-8');
@@ -310,7 +319,7 @@ function beitrags_report_form_submission_handler(){
                         'user_id' => sanitize_text_field($user_id),
                         'month' => sanitize_text_field($month),
                         'year' => sanitize_text_field($year),
-                        'posts_amount' => sanitize_text_field($posts_amount)
+                        'posts_amount' => sanitize_text_field($articles_over_thousand)
                     ),
                     array(
                         '%s',

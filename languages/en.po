@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-19 11:20+0200\n"
-"PO-Revision-Date: 2021-10-19 11:22+0200\n"
+"POT-Creation-Date: 2021-10-21 14:57+0200\n"
+"PO-Revision-Date: 2021-10-21 14:57+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_EN\n"
@@ -80,111 +80,110 @@ msgid ""
 msgstr ""
 "You have no published articles with over 1,000 words in the selected period."
 
-#: backend/report-articles-form.php:76
+#: backend/report-articles-form.php:77
 msgid ""
 "Der Beitrags-Report wurde nicht abgeschickt, da dieser für den gewählten "
 "Zeitraum bereits versendet wurde!"
 msgstr ""
-"The contribution report was not sent because it has already been sent for "
+"The contribution report was not sent, because it has already been sent for "
 "the selected period!"
 
-#: backend/report-articles-form.php:93
+#: backend/report-articles-form.php:79
+msgid ""
+"Der Beitrags-Report wurde nicht abgeschickt, da der gewählte Zeitraum noch "
+"nicht vorbei ist!"
+msgstr ""
+"The contribution report was not sent, because the selected period is not "
+"over yet!"
+
+#: backend/report-articles-form.php:96
 msgid "Wallet-ID"
 msgstr "Wallet-ID"
 
-#: backend/report-articles-form.php:97
+#: backend/report-articles-form.php:100
 msgid "Name"
 msgstr "Name"
 
-#: backend/report-articles-form.php:101
+#: backend/report-articles-form.php:104
 msgid "E-Mail"
 msgstr "E-Mail"
 
-#: backend/report-articles-form.php:105
+#: backend/report-articles-form.php:108
 msgid "Monat"
 msgstr "Month"
 
-#: backend/report-articles-form.php:127
+#: backend/report-articles-form.php:130
 msgid "Bitte auswählen..."
 msgstr "Please select…"
 
-#: backend/report-articles-form.php:142
+#: backend/report-articles-form.php:145
 msgid "Jahr"
 msgstr "Year"
 
-#: backend/report-articles-form.php:155
-msgid "Anzahl Beiträge"
-msgstr "Number of articles"
-
-#: backend/report-articles-form.php:160
+#: backend/report-articles-form.php:159
 msgid "Absenden"
 msgstr "Send"
 
-#: backend/report-articles-form.php:164
+#: backend/report-articles-form.php:163
 msgid "Beiträge der letzten 45 Tage"
 msgstr "Posts from the last 45 days"
 
-#: backend/report-articles-form.php:188
+#: backend/report-articles-form.php:187
 msgid "Titel"
 msgstr "Title"
 
-#: backend/report-articles-form.php:189
+#: backend/report-articles-form.php:188
 msgid "Datum"
 msgstr "Date"
 
-#: backend/report-articles-form.php:190 backend/report-articles-form.php:205
+#: backend/report-articles-form.php:189 backend/report-articles-form.php:204
 msgid "Wörter"
 msgstr "Words"
 
-#: backend/report-articles-form.php:204
+#: backend/report-articles-form.php:203
 msgid "Veröffentlicht"
 msgstr "Published on"
 
-#: backend/report-articles-form.php:226
+#: backend/report-articles-form.php:225
 msgid "Leider ist ein Fehler aufgetreten! Bitte versuchen Sie es erneut!"
 msgstr "Sorry, an error has occurred! Please try again!"
 
-#: backend/report-articles-form.php:290
+#: backend/report-articles-form.php:300
 #, php-format
 msgid "Auszahlung beantragt: %s"
 msgstr "Payment requested: %s"
 
-#: backend/report-articles-form.php:291
+#: backend/report-articles-form.php:301
 #, php-format
 msgid "Neue Auszahlung beantragt für %d. %d"
 msgstr "New payout requested for %d. %d"
 
-#: backend/report-articles-form.php:292
+#: backend/report-articles-form.php:302
 #, php-format
 msgid "Wallet-ID: %s"
 msgstr "Wallet-ID: %s"
 
-#: backend/report-articles-form.php:293
+#: backend/report-articles-form.php:303
 #, php-format
 msgid "Name: %s"
 msgstr "Name: %s"
 
-#: backend/report-articles-form.php:294
+#: backend/report-articles-form.php:304
 #, php-format
 msgid "E-Mail: %s"
 msgstr "E-Mail: %s"
 
-#: backend/report-articles-form.php:295
+#: backend/report-articles-form.php:305
 #, php-format
 msgid "Artikel über 1000 Wörter: %d"
 msgstr "Articles over 1000 words: %d"
 
-#: backend/report-articles-form.php:296
-#, php-format
-msgid "- Prüfung der autom. Berechnung: %d"
-msgstr "- Check from the autom. Calculation: %d"
-
-#: backend/report-articles-form.php:297
+#: backend/report-articles-form.php:306
 #, php-format
 msgid "Blog: %s - %s"
 msgstr "Blog: %s - %s"
 
-#: backend/report-articles-form.php:398
+#: backend/report-articles-form.php:407
 #, php-format
 msgid ""
 "Denke daran deinen <a href=\"%s\">Beitrags-Report</a> für diesen Monat "
@@ -415,6 +414,13 @@ msgstr "Categories: "
 #: tag.php:7
 msgid "Tag Archiv: "
 msgstr "Tag Archive: "
+
+#~ msgid "Anzahl Beiträge"
+#~ msgstr "Number of articles"
+
+#, php-format
+#~ msgid "- Prüfung der autom. Berechnung: %d"
+#~ msgstr "- Check from the autom. Calculation: %d"
 
 #~ msgid "Your comment is awaiting moderation."
 #~ msgstr "Your comment is awaiting moderation."
