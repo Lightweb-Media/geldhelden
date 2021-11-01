@@ -21,31 +21,88 @@
 			<!-- /post thumbnail -->
 
 			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
+			<h1><?php the_title(); ?></h1>
 			<!-- /post title -->
 
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Veröffentlicht von', 'geldhelden' ); ?> <?php the_author_posts_link(); ?></span>
-			<!-- /post details -->
-
 			<?php the_content(); // Dynamic Content ?>			
-			
-			<!-- return to main page -->
-			<button class="back-button" onclick="history.back(-1)">&#171; <?php _e('Zurück zu allen Beiträgen', 'geldhelden'); ?></button>
 
-			<?php the_tags( __( 'Tags: ', 'geldhelden' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+            <!-- categories & tags -->
+            <?php $categories = get_categories(); ?>
+            <ul class="loop-post-tags">
 
-			<p><?php _e( 'Kategorien: ', 'geldhelden' ); the_category(', '); // Separated by commas ?></p>
+                <?php if( $categories ){ ?>
+                    <?php foreach( $categories as $category ){ ?>
+                        <li><a href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a></li>
+                    <?php } ?>
+                <?php } ?>
+                
+			    <?php the_tags( '<li>', '</li><li>', '</li>' ); // Separated by commas with a line break at the end ?>
+                
+            </ul>
+            <!-- /categories & tags -->
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+            <div class="clear"></div>
+
+            <!-- post author -->
+            <?php
+            $fname = get_the_author_meta('first_name');
+            $lname = get_the_author_meta('last_name');
+            ?>
+            <div class="author-profile-box">
+                <div class="author-big-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta('email'), '128', '/images/no_images.jpg', get_the_author() ); ?></a></div>
+                <div class="author-profile-name">
+                    <h3><?php echo trim( $fname . " " . $lname ); ?></h3>
+                    <p class="author-description"><?php echo the_author_meta('description'); ?></p>
+                </div>
+            </div>
+			<!-- /post author -->
 
 			<?php comments_template(); ?>
 
+			<!-- return to main page -->
+			<button class="back-button" onclick="history.back(-1)">&#171; <?php _e('Zurück zu allen Beiträgen', 'geldhelden'); ?></button>
+
 		</article>
 		<!-- /article -->
+
+        <!-- related articles -->
+        <div id="related-articles">
+            <h2><?php _e('Weitere Beiträge', 'geldhelden'); ?></h2>
+            <ul id="related-articles-list"> 
+                <?php
+                $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 5, 'post__not_in' => array($post->ID) ) );
+                if( $related ) foreach( $related as $post ) {
+                setup_postdata($post); ?>
+                <li>
+                    <a class="post-grid-item-inner" href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+
+                        <?php if ( has_post_thumbnail()) : ?>
+                            <div class="realted-item-img" style="background: url(<?php the_post_thumbnail_url(); ?>);"></div>
+                        <?php endif; ?>
+
+                        <h4><?php the_title(); ?></h4>
+                        <?php html5wp_excerpt('related_excerpt_length'); ?>
+
+                        <div class="related-author-wrapper">
+                            <?php
+                            $fname = get_the_author_meta('first_name');
+                            $lname = get_the_author_meta('last_name');
+                            ?>
+                            <div class="author-small-profile-box">
+                                <div class="author-small-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta('email'), '128', '/images/no_images.jpg', get_the_author() ); ?></a></div>
+                                <div class="author-small-profile-name">
+                                    <span class="small-author-name"><?php echo trim( $fname . " " . $lname ); ?></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </li>
+                <?php }
+                wp_reset_postdata(); ?>
+            </ul>   
+        </div>
+        <!-- /related articles -->
 
 	<?php endwhile; ?>
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-21 14:56+0200\n"
-"PO-Revision-Date: 2021-10-21 14:56+0200\n"
+"POT-Creation-Date: 2021-11-01 11:15+0100\n"
+"PO-Revision-Date: 2021-11-01 11:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -36,7 +36,7 @@ msgstr "Архив автора для "
 msgid "Über "
 msgstr "Об авторе "
 
-#: author.php:42 loop.php:22 single.php:31
+#: author.php:42
 msgid "Veröffentlicht von"
 msgstr "Опубликовано"
 
@@ -56,161 +56,31 @@ msgstr "% комментария"
 msgid "Nichts gefunden."
 msgstr "Ничего не найдено."
 
-#: backend/report-articles-form.php:36
-msgid "Beitrag-Report"
-msgstr "Опубликовать отчет"
-
-#: backend/report-articles-form.php:60
-msgid "Beitrags-Report senden"
-msgstr "Отправить отчет о вкладе"
-
-#: backend/report-articles-form.php:67
-#, php-format
-msgid ""
-"Anfrage erfolgreich versendet. Sie haben im gewählten Zeitraum %d Beiträge "
-"mit über 1.000 Wörtern veröffentlicht."
-msgstr ""
-"Запрос успешно отправлен. За выбранный период вы опубликовали %d статей, "
-"содержащих более 1000 слов."
-
-#: backend/report-articles-form.php:71
-msgid ""
-"Sie haben im gewählten Zeitraum keine Beiträge mit über 1.000 Wörtern "
-"veröffentlicht."
-msgstr ""
-"Вы не публиковали статей, содержащих более 1000 слов за выбранный период."
-
-#: backend/report-articles-form.php:77
-msgid ""
-"Der Beitrags-Report wurde nicht abgeschickt, da dieser für den gewählten "
-"Zeitraum bereits versendet wurde!"
-msgstr ""
-"Отчет о взносах не был отправлен, потому что он уже был отправлен за "
-"выбранный период!"
-
-#: backend/report-articles-form.php:79
-msgid ""
-"Der Beitrags-Report wurde nicht abgeschickt, da der gewählte Zeitraum noch "
-"nicht vorbei ist!"
-msgstr ""
-"Отчет о взносах не был отправлен, потому что выбранный период еще не прошел!"
-
-#: backend/report-articles-form.php:96
-msgid "Wallet-ID"
-msgstr "ID кошелька"
-
-#: backend/report-articles-form.php:100
-msgid "Name"
-msgstr "Фамилия"
-
-#: backend/report-articles-form.php:104
-msgid "E-Mail"
-msgstr "Эл. почта"
-
-#: backend/report-articles-form.php:108
-msgid "Monat"
-msgstr "Mесяц"
-
-#: backend/report-articles-form.php:130
-msgid "Bitte auswählen..."
-msgstr "Пожалуйста, выберите…"
-
-#: backend/report-articles-form.php:145
-msgid "Jahr"
-msgstr "Rод"
-
-#: backend/report-articles-form.php:159
-msgid "Absenden"
-msgstr "Представить форму"
-
-#: backend/report-articles-form.php:163
-msgid "Beiträge der letzten 45 Tage"
-msgstr "Сообщения за последние 45 дней"
-
-#: backend/report-articles-form.php:187
-msgid "Titel"
-msgstr "Заголовок"
-
-#: backend/report-articles-form.php:188
-msgid "Datum"
-msgstr "Дата"
-
-#: backend/report-articles-form.php:189 backend/report-articles-form.php:204
-msgid "Wörter"
-msgstr "Cлова"
-
-#: backend/report-articles-form.php:203
-msgid "Veröffentlicht"
-msgstr "Опубликовано"
-
-#: backend/report-articles-form.php:225
-msgid "Leider ist ein Fehler aufgetreten! Bitte versuchen Sie es erneut!"
-msgstr "Извините, произошла ошибка! Пожалуйста, попробуйте еще раз!"
-
-#: backend/report-articles-form.php:300
-#, php-format
-msgid "Auszahlung beantragt: %s"
-msgstr "Запрошена оплата: %s"
-
-#: backend/report-articles-form.php:301
-#, php-format
-msgid "Neue Auszahlung beantragt für %d. %d"
-msgstr "Запрошена новая выплата на сумму %d. %d"
-
-#: backend/report-articles-form.php:302
-#, php-format
-msgid "Wallet-ID: %s"
-msgstr "ID кошелька: %s"
-
-#: backend/report-articles-form.php:303
-#, php-format
-msgid "Name: %s"
-msgstr "Фамилия: %s"
-
-#: backend/report-articles-form.php:304
-#, php-format
-msgid "E-Mail: %s"
-msgstr "Эл. почта: %s"
-
-#: backend/report-articles-form.php:305
-#, php-format
-msgid "Artikel über 1000 Wörter: %d"
-msgstr "- в том числе статьи более 1000 слов: %d"
-
-#: backend/report-articles-form.php:306
-#, php-format
-msgid "Blog: %s - %s"
-msgstr "Блог: %s - %s"
-
-#: backend/report-articles-form.php:407
-#, php-format
-msgid ""
-"Denke daran deinen <a href=\"%s\">Beitrags-Report</a> für diesen Monat "
-"abzuschicken!"
-msgstr ""
-"Не забудьте отправить свой <a href=„%s“> отчет о взносах </a> за этот месяц!"
-
 #: backend/theme-settings.php:9
 msgid "Geldhelden Theme"
 msgstr "Geldhelden Theme"
 
-#: backend/theme-settings.php:37
+#: backend/theme-settings.php:39
 msgid "Geldhelden Einstellungen"
 msgstr "Geldhelden настройки"
 
-#: backend/theme-settings.php:49
+#: backend/theme-settings.php:51
+msgid "Eigenes Logo"
+msgstr "Собственный логотип"
+
+#: backend/theme-settings.php:59
 msgid "Sprache"
 msgstr "Язык"
 
-#: backend/theme-settings.php:54
+#: backend/theme-settings.php:64
 msgid "Deutsch"
 msgstr "Немецкий"
 
-#: backend/theme-settings.php:61
+#: backend/theme-settings.php:71
 msgid "Englisch"
 msgstr "Aнглийский"
 
-#: backend/theme-settings.php:68
+#: backend/theme-settings.php:78
 msgid "Russisch"
 msgstr "Pусский"
 
@@ -254,93 +124,85 @@ msgstr "Область виджетов 2"
 msgid "Beschreibung Widget Area 2"
 msgstr "Описание Область виджетов 2"
 
-#: functions.php:281
-msgid "Zum Artikel"
-msgstr "Перейти к статье"
+#: functions.php:290
+msgid "Weiterlesen"
+msgstr "продолжить чтение"
 
-#: functions.php:336
-#, php-format
-msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">sagt:</span>"
+#: functions.php:346
+#, fuzzy, php-format
+#| msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">sagt:</span>"
+msgid "<cite class=\"fn\">%s</cite> <span class=\"time-elapsed\">%s</span>"
 msgstr "<cite class=„fn“>%s</cite> <span class=„says“>говорит:</span>"
 
-#: functions.php:339
+#: functions.php:349
 msgid "Ihr Kommentar wartet auf die Freischaltung."
 msgstr "Ваш комментарий ожидает активации."
 
-#: functions.php:345
-#, php-format
-msgid "%1$s am %2$s"
-msgstr "%1$s на %2$s"
-
-#: functions.php:345
-msgid "(Bearbeiten)"
-msgstr "(Редактировать)"
-
-#: functions.php:415
+#: functions.php:422
 msgid "Footer Column 1"
 msgstr "Столбец нижнего колонтитула 1"
 
-#: functions.php:417
+#: functions.php:424
 msgid "Appears on the first footer column."
 msgstr "Отображается в первом нижнем колонтитуле."
 
-#: functions.php:425
+#: functions.php:432
 msgid "Footer Column 2"
 msgstr "Столбец нижнего колонтитула 2"
 
-#: functions.php:427
+#: functions.php:434
 msgid "Appears on the second footer column."
 msgstr "Появляется во втором нижнем колонтитуле."
 
-#: functions.php:435 functions.php:445
+#: functions.php:442 functions.php:452
 msgid "Footer Column 3"
 msgstr "Столбец нижнего колонтитула 3"
 
-#: functions.php:437 functions.php:447
+#: functions.php:444 functions.php:454
 msgid "Appears on the third footer column."
 msgstr "Появляется в третьем нижнем колонтитуле."
 
-#: header.php:90
+#: header.php:99
 msgid "Zum YouTube Kanal"
 msgstr "перейти в YouTube"
 
-#: header.php:91
+#: header.php:100
 msgid "YouTube"
 msgstr "YouTube"
 
-#: header.php:95
+#: header.php:106
 msgid "Zur Geldhelden Akademie"
 msgstr "MoneyHeroes Русскоговорящее сообщество Home"
 
-#: header.php:129
+#: header.php:140
 msgid "Themen"
 msgstr "Topics"
 
-#: header.php:130
+#: header.php:141
 msgid "Events"
 msgstr "Events"
 
-#: header.php:131
+#: header.php:142
 msgid "Gruppen"
 msgstr "Группы"
 
-#: header.php:132
+#: header.php:143
 msgid "Kurse"
 msgstr "Курсы"
 
-#: header.php:133
+#: header.php:144
 msgid "MoneyHero Token"
 msgstr "MoneyHero Token"
 
-#: header.php:141
+#: header.php:152
 msgid "Chat"
 msgstr "Чат"
 
-#: header.php:143
+#: header.php:154
 msgid "Geldhelden Community"
 msgstr "MoneyHeroes Русскоговорящее сообщество"
 
-#: header.php:146
+#: header.php:157
 msgid "Online now"
 msgstr "Сейчас в сети"
 
@@ -366,23 +228,13 @@ msgstr "Неизвестный статус средства проверки о
 msgid "There is no changelog available."
 msgstr "Журнал изменений отсутствует."
 
-#: index.php:7
-msgid "Aktuelle Artikel"
-msgstr "Текущие статьи"
-
-#: loop.php:23
-msgid "Kommentar verfassen"
-msgstr "Написать комментарий"
-
-#: loop.php:23
-msgid "1 Kommentar"
-msgstr "1 Комментарий"
-
-#: loop.php:23
-msgid "% Kommentare"
+#: loop.php:66
+#, fuzzy
+#| msgid "% Kommentare"
+msgid "Kommentare"
 msgstr "5 комментариев"
 
-#: loop.php:39 page.php:30 single.php:57
+#: loop.php:82 page.php:30 single.php:114
 msgid "Keine Artikel gefunden."
 msgstr "Статьи не найдены."
 
@@ -399,24 +251,153 @@ msgstr "Введите слово для поиска и нажмите Enter."
 msgid "Suchen"
 msgstr "Стремиться"
 
-#: single.php:13 single.php:37
+#: single.php:13 single.php:63
 msgid "Zurück zu allen Beiträgen"
 msgstr "Вернуться ко всем сообщениям"
 
-#: single.php:39
-msgid "Tags: "
-msgstr "Теги: "
-
-#: single.php:41
-msgid "Kategorien: "
-msgstr "Категории: "
+#: single.php:70
+#, fuzzy
+#| msgid "Anzahl Beiträge"
+msgid "Weitere Beiträge"
+msgstr "Количество постов"
 
 #: tag.php:7
 msgid "Tag Archiv: "
 msgstr "Архив тегов: "
 
-#~ msgid "Anzahl Beiträge"
-#~ msgstr "Количество постов"
+#~ msgid "Beitrag-Report"
+#~ msgstr "Опубликовать отчет"
+
+#~ msgid "Beitrags-Report senden"
+#~ msgstr "Отправить отчет о вкладе"
+
+#, php-format
+#~ msgid ""
+#~ "Anfrage erfolgreich versendet. Sie haben im gewählten Zeitraum %d "
+#~ "Beiträge mit über 1.000 Wörtern veröffentlicht."
+#~ msgstr ""
+#~ "Запрос успешно отправлен. За выбранный период вы опубликовали %d статей, "
+#~ "содержащих более 1000 слов."
+
+#~ msgid ""
+#~ "Sie haben im gewählten Zeitraum keine Beiträge mit über 1.000 Wörtern "
+#~ "veröffentlicht."
+#~ msgstr ""
+#~ "Вы не публиковали статей, содержащих более 1000 слов за выбранный период."
+
+#~ msgid ""
+#~ "Der Beitrags-Report wurde nicht abgeschickt, da dieser für den gewählten "
+#~ "Zeitraum bereits versendet wurde!"
+#~ msgstr ""
+#~ "Отчет о взносах не был отправлен, потому что он уже был отправлен за "
+#~ "выбранный период!"
+
+#~ msgid ""
+#~ "Der Beitrags-Report wurde nicht abgeschickt, da der gewählte Zeitraum "
+#~ "noch nicht vorbei ist!"
+#~ msgstr ""
+#~ "Отчет о взносах не был отправлен, потому что выбранный период еще не "
+#~ "прошел!"
+
+#~ msgid "Wallet-ID"
+#~ msgstr "ID кошелька"
+
+#~ msgid "Name"
+#~ msgstr "Фамилия"
+
+#~ msgid "E-Mail"
+#~ msgstr "Эл. почта"
+
+#~ msgid "Monat"
+#~ msgstr "Mесяц"
+
+#~ msgid "Bitte auswählen..."
+#~ msgstr "Пожалуйста, выберите…"
+
+#~ msgid "Jahr"
+#~ msgstr "Rод"
+
+#~ msgid "Absenden"
+#~ msgstr "Представить форму"
+
+#~ msgid "Beiträge der letzten 45 Tage"
+#~ msgstr "Сообщения за последние 45 дней"
+
+#~ msgid "Titel"
+#~ msgstr "Заголовок"
+
+#~ msgid "Datum"
+#~ msgstr "Дата"
+
+#~ msgid "Wörter"
+#~ msgstr "Cлова"
+
+#~ msgid "Veröffentlicht"
+#~ msgstr "Опубликовано"
+
+#~ msgid "Leider ist ein Fehler aufgetreten! Bitte versuchen Sie es erneut!"
+#~ msgstr "Извините, произошла ошибка! Пожалуйста, попробуйте еще раз!"
+
+#, php-format
+#~ msgid "Auszahlung beantragt: %s"
+#~ msgstr "Запрошена оплата: %s"
+
+#, php-format
+#~ msgid "Neue Auszahlung beantragt für %d. %d"
+#~ msgstr "Запрошена новая выплата на сумму %d. %d"
+
+#, php-format
+#~ msgid "Wallet-ID: %s"
+#~ msgstr "ID кошелька: %s"
+
+#, php-format
+#~ msgid "Name: %s"
+#~ msgstr "Фамилия: %s"
+
+#, php-format
+#~ msgid "E-Mail: %s"
+#~ msgstr "Эл. почта: %s"
+
+#, php-format
+#~ msgid "Artikel über 1000 Wörter: %d"
+#~ msgstr "- в том числе статьи более 1000 слов: %d"
+
+#, php-format
+#~ msgid "Blog: %s - %s"
+#~ msgstr "Блог: %s - %s"
+
+#, php-format
+#~ msgid ""
+#~ "Denke daran deinen <a href=\"%s\">Beitrags-Report</a> für diesen Monat "
+#~ "abzuschicken!"
+#~ msgstr ""
+#~ "Не забудьте отправить свой <a href=„%s“> отчет о взносах </a> за этот "
+#~ "месяц!"
+
+#~ msgid "Zum Artikel"
+#~ msgstr "Перейти к статье"
+
+#, php-format
+#~ msgid "%1$s am %2$s"
+#~ msgstr "%1$s на %2$s"
+
+#~ msgid "(Bearbeiten)"
+#~ msgstr "(Редактировать)"
+
+#~ msgid "Aktuelle Artikel"
+#~ msgstr "Текущие статьи"
+
+#~ msgid "Kommentar verfassen"
+#~ msgstr "Написать комментарий"
+
+#~ msgid "1 Kommentar"
+#~ msgstr "1 Комментарий"
+
+#~ msgid "Tags: "
+#~ msgstr "Теги: "
+
+#~ msgid "Kategorien: "
+#~ msgstr "Категории: "
 
 #, php-format
 #~ msgid "- Prüfung der autom. Berechnung: %d"

@@ -21,6 +21,7 @@
 <body <?php body_class(); ?>>
 
 	<?php
+	$geldhelden_own_logo = esc_attr( get_option('geldhelden_own_logo') );
 	$geldhelden_language = esc_attr( get_option('geldhelden_language') );
 
 	if( isset($geldhelden_language) ){
@@ -86,11 +87,21 @@
 
 		<div class="sidebar-left-header">
 			<div class="left-content">
-				<div class="youtube-logo">
-					<a href="https://www.youtube.com/channel/UCF9UDEHzw4GTe_IQHAkyXrg?sub_confirmation=1" title="<?php _e( 'Zum YouTube Kanal', 'geldhelden' );?>">
-						<img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.webp" alt="<?php _e( 'YouTube', 'geldhelden' );?>">
-					</a>
-				</div>
+
+                <?php if( isset($geldhelden_own_logo) && !empty($geldhelden_own_logo) ){ ?>
+                    <div class="own-logo">
+                        <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
+                            <img src="<?php echo esc_url_raw($geldhelden_own_logo); ?>" alt="<?php bloginfo('name'); ?>">
+                        </a>
+                    </div>
+                <?php }else{ ?>
+                    <div class="youtube-logo">
+                        <a href="https://www.youtube.com/channel/UCF9UDEHzw4GTe_IQHAkyXrg?sub_confirmation=1" title="<?php _e( 'Zum YouTube Kanal', 'geldhelden' );?>">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.webp" alt="<?php _e( 'YouTube', 'geldhelden' );?>">
+                        </a>
+                    </div>
+                <?php } ?>
+
 				<div class="logo">
 					<a href="<?php echo $main_url; ?>" title="<?php _e( 'Zur Geldhelden Akademie', 'geldhelden' );?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/geldhelden-logo.webp" alt="Logo" class="logo-img">

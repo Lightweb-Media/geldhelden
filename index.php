@@ -4,7 +4,7 @@
 		<!-- section -->
 		<section>
 
-			<h1><?php _e( 'Aktuelle Artikel', 'geldhelden' ); ?></h1>
+			<h1><?php echo get_bloginfo( 'name' ); ?></h1>
 
 			<?php get_template_part('loop'); ?>
 

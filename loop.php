@@ -6,26 +6,69 @@
 		<!-- post thumbnail -->
 		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-			<?php the_post_thumbnail('full'); // Declare pixel size you need inside the array ?>
+			    <?php the_post_thumbnail('full'); // Declare pixel size you need inside the array ?>
 			</a>
 		<?php endif; ?>
 		<!-- /post thumbnail -->
 
+        <div class="post-meta-box">
+            
+            <!-- post author -->
+            <?php
+            $fname = get_the_author_meta('first_name');
+            $lname = get_the_author_meta('last_name');
+            ?>
+            <div class="author-profile-box">
+                <div class="author-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta('email'), '128', '/images/no_images.jpg', get_the_author() ); ?></a></div>
+                <div class="author-profile-name"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo trim( $fname . " " . $lname ); ?></a></div>
+            </div>
+            <!-- /post author -->
+
+            <!-- post date -->
+            <div class="loop-post-date">
+                <span class="date"><?php the_time('d. F Y'); ?></span>
+            </div>
+            <!-- /post date -->
+
+        </div>
+
 		<!-- post title -->
-		<h2>
+		<h2 class="loop-post-title">
 			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
 		</h2>
 		<!-- /post title -->
 
-		<!-- post details -->
-		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-		<span class="author"><?php _e( 'Veröffentlicht von', 'geldhelden' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Kommentar verfassen', 'geldhelden' ), __( '1 Kommentar', 'geldhelden' ), __( '% Kommentare', 'geldhelden' )); ?></span>
-		<!-- /post details -->
-
 		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
 
-		<?php edit_post_link(); ?>
+        <!-- post categories / tags -->
+        <?php $categories = get_categories(); ?>
+        <?php $tags = get_tags(); ?>
+		<ul class="loop-post-tags">
+
+            <?php if( $categories ){ ?>
+                <?php foreach( $categories as $category ){ ?>
+			        <li><a href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a></li>
+                <?php } ?>
+            <?php } ?>
+
+            <?php if( $tags ){ ?>
+                <?php foreach( $tags as $tag ){ ?>
+			        <li><a href="<?php echo get_term_link($tag->term_id); ?>"><?php echo $tag->name; ?></a></li>
+                <?php } ?>
+            <?php } ?>
+
+        </ul>
+		<!-- /post title -->
+        
+        <div class="clear"></div>
+
+		<!-- post details -->
+        <a class="comment-link" href="<?php echo get_permalink() . "#post-comments"; ?>" title="<?php the_title() . " - " . __('Kommentare', 'geldhelden'); ?>">
+            <div class="comments-box">
+                <span class="comments"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/comment-alt-regular.svg"><?php echo get_comments_number(); ?></span>
+            </div>
+        </a>
+        <!-- /post details -->
 
 	</article>
 	<!-- /article -->

@@ -21,6 +21,7 @@ function register_theme_settings_menu(){
 add_action( 'admin_menu', 'register_theme_settings_menu' );
 
 function register_geldhelden_settings() {
+    register_setting( 'geldhelden-settings', 'geldhelden_own_logo' );
     register_setting( 'geldhelden-settings', 'geldhelden_language' );
 }
  
@@ -29,6 +30,7 @@ function register_geldhelden_settings() {
  */
 function geldhelden_theme_settings(){ 
 
+    $geldhelden_own_logo = esc_url_raw( get_option('geldhelden_own_logo') );
     $geldhelden_language = esc_attr( get_option('geldhelden_language') );
 
     ?>
@@ -43,6 +45,14 @@ function geldhelden_theme_settings(){
             <?php do_settings_sections( 'geldhelden-settings' ); ?>
 
             <table class="form-table">
+
+                <!-- Eigenes Logo -->
+                <tr valign="top">
+                    <th scope="row"><?php _e('Eigenes Logo', 'geldhelden'); ?></th>
+                    <td>
+                        <input type="url" name="geldhelden_own_logo" id="geldhelden_own_logo" value="<?php echo ( isset($geldhelden_own_logo) ? $geldhelden_own_logo : ''); ?>" placeholder="https://...">
+                    </td>
+                </tr>
 
                 <!-- Sprache -->
                 <tr valign="top">
