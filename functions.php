@@ -246,15 +246,14 @@ function html5wp_pagination()
 }
 
 // Custom Excerpts
-function html5wp_index($length) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
+function html5wp_index($length)
 {
-    return 20;
+    return 250;
 }
 
-// Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
-function html5wp_custom_post($length)
+function related_excerpt_length($length)
 {
-    return 40;
+    return 10;
 }
 
 // Create the Custom Excerpts callback
@@ -274,11 +273,21 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
     echo $output;
 }
 
+function my_custom_excerpt( $length ) {
+    $custom = get_theme_mod( 'custom_excerpt_length' );
+    if( $custom != '' ) {
+        return $length = intval( $custom );
+    } else {
+        return $length;
+    }
+}
+add_filter( 'excerpt_length', 'my_custom_excerpt', 999 );
+
 // Custom View Article link to Post
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('Zum Artikel', 'geldhelden') . '</a>';
+    return '<a class="view-article" href="' . get_permalink($post->ID) . '">...' . __('Weiterlesen', 'geldhelden') . '</a>';
 }
 
 // Remove 'text/css' from our enqueued stylesheet
@@ -332,24 +341,22 @@ function html5blankcomments($comment, $args, $depth)
 	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">sagt:</span>', 'geldhelden'), get_comment_author_link()) ?>
-	</div>
-<?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Ihr Kommentar wartet auf die Freischaltung.', 'geldhelden') ?></em>
-	<br />
-<?php endif; ?>
+        <?php if ($args['avatar_size'] != 0){ echo get_avatar( $comment ); } ?>
+        <div class="commtent-details">
+            <?php printf(__('<cite class="fn">%s</cite> <span class="time-elapsed">%s</span>', 'geldhelden'), get_comment_author_link(), smk_get_comment_time(get_comment_ID())) ?>
+            <div class="comment-content">
+                <?php if ($comment->comment_approved == '0') : ?>
+                    <em class="comment-awaiting-moderation"><?php _e('Ihr Kommentar wartet auf die Freischaltung.', 'geldhelden') ?></em>
+                    <br />
+                <?php endif; ?>
 
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			printf( __('%1$s am %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Bearbeiten)', 'geldhelden'),'  ','' );
-		?>
-	</div>
+                <?php comment_text() ?>
 
-	<?php comment_text() ?>
-
-	<div class="reply">
-	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                <div class="reply">
+                    <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                </div>
+            </div>
+        </div>
 	</div>
 	<?php if ( 'div' != $args['style'] ) : ?>
 	</div>
@@ -452,3 +459,14 @@ function theme_slug_register_footer_widgets() {
 	) );
 }
 add_action( 'widgets_init', 'theme_slug_register_footer_widgets', 20 );
+
+// Time Elapsed
+function smk_get_comment_time( $comment_id = 0 ){
+    return sprintf( 
+        _x( '%s', 'Human-readable time', 'geldhelden' ), 
+        human_time_diff( 
+            get_comment_date( 'U', $comment_id ), 
+            current_time( 'timestamp' ) 
+        ) 
+    );
+}
