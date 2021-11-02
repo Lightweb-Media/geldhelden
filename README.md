@@ -18,6 +18,26 @@ Go to Settings -> Read -> Switch Homepage to "Show last Posts"
 
 ###Changelog###
 
+v2.1.4 02.11.2021
+Bugfixes
+- iframe 100% width (crashing responsive design)
+- author box hidden, when no name / description
+- show only 5 categories / tags - onclick show all
+- correct way to get categories & tags in loop and single post
+- fixed comment section
+
+Design
+- reordered Bulletpoints
+- Posts in White Box with Shadow
+- Box-Overlayer under the THumbnail with Logo from Author (if set)
+- Links pink + hover underlined
+- Footer Widgets now under each other
+
+Function
+- Logo Top Left is changeable in Adminscreen
+- Authorbox at the End of the Post (if set in Authorscreen)
+- "More Posts"
+
 v2.1.3 21.10.2021
 - Updated ReadMe with Changelog and Bugreports
 - MultiLanguage Support (German, English, Russian)
