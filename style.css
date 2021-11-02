@@ -227,16 +227,14 @@ input:focus {
     background-color: #F4F6FA;
     margin: -40px 16px 0;
 }
-.loop-post-date {
-    margin-left: 15px;
-    border-left: 1px solid #ddd;
-    padding-left: 15px;
-}
 .author-profile-box{
     display: flex;
     align-items: center;
     display: -webkit-flex;
     display: flex;
+    margin-right: 15px;
+    border-right: 1px solid #ddd;
+    padding-right: 15px;
 }
 .author-profile-image img {
     height: 58px;
@@ -755,6 +753,14 @@ ul.loop-post-tags li {
     float: left;
 }
 
+ul.loop-post-tags li.li-hidden {
+    display: none;
+}
+
+a.show-all-tags {
+    cursor: pointer;
+}
+
 ul.loop-post-tags li a {
     color: #4D5461;
     position: relative;
@@ -794,10 +800,10 @@ body.single-post .author-profile-box {
     display: flex;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    border-right: 0;
     margin: 35px 0 0;
     padding: 35px 0;
 }
-
 
 body.single-post .author-small-profile-box{
     display: flex;
@@ -965,13 +971,12 @@ textarea#comment {
 }
 
 ul#related-articles-list {
-    padding: 0;
     margin: 0;
     list-style: none;
     padding: 2px;
     white-space: nowrap;
     max-width: 700px;
-    overflow-x: scroll;
+    overflow-x: auto;
     margin-left: -4px;
     margin-right: -4px;
 }
@@ -1061,7 +1066,12 @@ span.small-author-name {
 ul#related-articles-list li h4 {
     margin: 10px 0 0;
     font-size: 14px !important;
+    overflow: hidden !important;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
 ul#related-articles-list p {
     width: 100%;
     line-height: 1.2em;

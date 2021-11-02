@@ -26,20 +26,33 @@
 
 			<?php the_content(); // Dynamic Content ?>			
 
-            <!-- categories & tags -->
-            <?php $categories = get_categories(); ?>
+            <!-- post categories / tags -->
+            <?php $categories = get_the_category(); ?>
+            <?php $tags = get_the_tags(); ?>
+            <?php $i = 1; ?>
             <ul class="loop-post-tags">
 
                 <?php if( $categories ){ ?>
                     <?php foreach( $categories as $category ){ ?>
-                        <li><a href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a></li>
+                        <li <?php echo ( $i > 5 ? 'class="li-hidden"' : ''); ?>><a href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a></li>
+                        <?php $i++; ?>
                     <?php } ?>
                 <?php } ?>
-                
-			    <?php the_tags( '<li>', '</li><li>', '</li>' ); // Separated by commas with a line break at the end ?>
-                
+
+                <?php if( $tags ){ ?>
+                    <?php foreach( $tags as $tag ){ ?>
+                        <li <?php echo ( $i > 5 ? 'class="li-hidden"' : ''); ?>><a href="<?php echo get_term_link($tag->term_id); ?>"><?php echo $tag->name; ?></a></li>
+                        <?php $i++; ?>
+                    <?php } ?>
+                <?php } ?>
+
+                <!-- Add Button with [...] if more than 5 categories / tags -->
+                <?php if( $i > 5 ){ ?>
+                    <li><a class="show-all-tags">...</a></li>
+                <?php } ?>
+
             </ul>
-            <!-- /categories & tags -->
+            <!-- /post categories / tags -->
 
             <div class="clear"></div>
 
@@ -47,14 +60,20 @@
             <?php
             $fname = get_the_author_meta('first_name');
             $lname = get_the_author_meta('last_name');
-            ?>
-            <div class="author-profile-box">
-                <div class="author-big-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta('email'), '128', '/images/no_images.jpg', get_the_author() ); ?></a></div>
-                <div class="author-profile-name">
-                    <h3><?php echo trim( $fname . " " . $lname ); ?></h3>
-                    <p class="author-description"><?php echo the_author_meta('description'); ?></p>
-                </div>
-            </div>
+            $full_name = $fname . " " . $lname;
+            $description = get_the_author_meta('description');
+
+            if( strlen($full_name) > 1 ){ 
+                if(!empty($description)){ ?>
+                    <div class="author-profile-box">
+                        <div class="author-big-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?></a></div>
+                        <div class="author-profile-name">
+                            <h3><?php echo trim( $fname . " " . $lname ); ?></h3>
+                            <p class="author-description"><?php echo the_author_meta('description'); ?></p>
+                        </div>
+                    </div>
+                <?php } ?>
+            <?php } ?>
 			<!-- /post author -->
 
 			<?php comments_template(); ?>
@@ -80,21 +99,25 @@
                             <div class="realted-item-img" style="background: url(<?php the_post_thumbnail_url(); ?>);"></div>
                         <?php endif; ?>
 
+                        <?php
+                            $fname = get_the_author_meta('first_name');
+                            $lname = get_the_author_meta('last_name');
+                            $full_name = $fname . " " . $lname;
+                        ?>
+
                         <h4><?php the_title(); ?></h4>
                         <?php html5wp_excerpt('related_excerpt_length'); ?>
 
-                        <div class="related-author-wrapper">
-                            <?php
-                            $fname = get_the_author_meta('first_name');
-                            $lname = get_the_author_meta('last_name');
-                            ?>
-                            <div class="author-small-profile-box">
-                                <div class="author-small-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta('email'), '128', '/images/no_images.jpg', get_the_author() ); ?></a></div>
-                                <div class="author-small-profile-name">
-                                    <span class="small-author-name"><?php echo trim( $fname . " " . $lname ); ?></span>
+                        <?php if( strlen($full_name) > 1 ){ ?>
+                            <div class="related-author-wrapper">
+                                <div class="author-small-profile-box">
+                                    <div class="author-small-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?></a></div>
+                                    <div class="author-small-profile-name">
+                                        <span class="small-author-name"><?php echo trim( $fname . " " . $lname ); ?></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        <?php } ?>
                         
                     </a>
                 </li>
