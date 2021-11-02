@@ -57,4 +57,11 @@ jQuery(document).ready(function() {
         } 
     });
 
+
+});
+
+jQuery(document).on('click', '.show-all-tags', function () {
+    var ul = jQuery(this).parent().parent();
+    ul.find('li.li-hidden').removeClass('li-hidden');
+    jQuery(this).remove();
 });
