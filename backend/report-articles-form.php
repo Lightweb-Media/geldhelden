@@ -296,7 +296,7 @@ function beitrags_report_form_submission_handler(){
                 // Send only mail, if more than one article > 1000 words 
                 if( $articles_over_thousand > 0 ){
 
-                    $to = 'hey@moneyhero.io';
+                    $to = 'daniela@moneyhero.io';
                     $subject = wp_sprintf( __('Auszahlung beantragt: %s', 'geldhelden'), $user_name );
                     $body = wp_sprintf( __( 'Neue Auszahlung beantragt für %d. %d', 'geldhelden' ), (($month < 10) ? '0' . $month : $month), $year ) . "<br><br>";
                     $body .= wp_sprintf( __( 'Wallet-ID: %s', 'geldhelden' ), $wallet_id ) . "<br>";
