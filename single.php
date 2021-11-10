@@ -62,11 +62,15 @@
             $lname = get_the_author_meta('last_name');
             $full_name = $fname . " " . $lname;
             $description = get_the_author_meta('description');
+            $author_id = get_the_author_meta( 'ID' );
+            $profile_img = get_user_meta( $author_id, 'profile_img', true );
 
             if( strlen($full_name) > 1 ){ 
                 if(!empty($description)){ ?>
                     <div class="author-profile-box">
-                        <div class="author-big-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?></a></div>
+                        <?php if( $profile_img ){ ?>
+                            <div class="author-big-profile-image"><a href="<?php echo get_author_posts_url($author_id); ?>"><img src="<?php echo esc_url_raw( $profile_img ); ?>" /></a></div>
+                        <?php } ?>
                         <div class="author-profile-name">
                             <h3><?php echo trim( $fname . " " . $lname ); ?></h3>
                             <p class="author-description"><?php echo the_author_meta('description'); ?></p>
@@ -103,15 +107,18 @@
                             $fname = get_the_author_meta('first_name');
                             $lname = get_the_author_meta('last_name');
                             $full_name = $fname . " " . $lname;
+                            $small_profile_img = get_user_meta( get_the_author_meta( 'ID' ), 'profile_img', true );
                         ?>
 
                         <h4><?php the_title(); ?></h4>
-                        <?php html5wp_excerpt('related_excerpt_length'); ?>
+                        <?php moneyhero_excerpt(80, false); ?>
 
                         <?php if( strlen($full_name) > 1 ){ ?>
                             <div class="related-author-wrapper">
                                 <div class="author-small-profile-box">
-                                    <div class="author-small-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?></a></div>
+                                    <?php if($small_profile_img){ ?>
+                                        <div class="author-small-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><img src="<?php echo esc_url_raw( $small_profile_img ); ?>" class="avatar avatar-96 photo" width="96" height="96" loading="lazy"></a></div>
+                                    <?php } ?>
                                     <div class="author-small-profile-name">
                                         <span class="small-author-name"><?php echo trim( $fname . " " . $lname ); ?></span>
                                     </div>

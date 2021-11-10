@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-11-01 11:16+0100\n"
-"PO-Revision-Date: 2021-11-01 11:17+0100\n"
+"POT-Creation-Date: 2021-11-10 13:28+0100\n"
+"PO-Revision-Date: 2021-11-10 13:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_EN\n"
@@ -56,37 +56,41 @@ msgstr "% Comments"
 msgid "Nichts gefunden."
 msgstr "Not found."
 
-#: backend/theme-settings.php:9
+#: backend/add-profile-img.php:12 backend/add-profile-img.php:16
+msgid "Profilbild"
+msgstr "Profile image"
+
+#: backend/add-profile-img.php:19
+msgid "Füge einen Link zu deinem Profilbild hinzu."
+msgstr "Add a link to your profile image."
+
+#: backend/theme-settings.php:13
 msgid "Geldhelden Theme"
 msgstr "Geldhelden Theme"
 
-#: backend/theme-settings.php:39
+#: backend/theme-settings.php:43
 msgid "Geldhelden Einstellungen"
 msgstr "Geldhelden Settings"
 
-#: backend/theme-settings.php:51
+#: backend/theme-settings.php:55
 msgid "Eigenes Logo"
 msgstr "Own Logo"
 
-#: backend/theme-settings.php:59
+#: backend/theme-settings.php:63
 msgid "Sprache"
 msgstr "Language"
 
-#: backend/theme-settings.php:64
+#: backend/theme-settings.php:68
 msgid "Deutsch"
 msgstr "German"
 
-#: backend/theme-settings.php:71
+#: backend/theme-settings.php:75
 msgid "Englisch"
 msgstr "English"
 
-#: backend/theme-settings.php:78
+#: backend/theme-settings.php:82
 msgid "Russisch"
 msgstr "Russian"
-
-#: category.php:7
-msgid "Kategorien für "
-msgstr "Categories for "
 
 #: comments.php:3
 msgid "Der Beitrag ist passwortgesichert. Bitte geben Sie das Passwort ein."
@@ -124,85 +128,84 @@ msgstr "Widget Area 2"
 msgid "Beschreibung Widget Area 2"
 msgstr "Description Widget Area 2"
 
-#: functions.php:290
+#: functions.php:255 functions.php:273
 msgid "Weiterlesen"
 msgstr "Read more"
 
-#: functions.php:346
-#, fuzzy, php-format
-#| msgid "<cite class=\"fn\">%s</cite> <span class=\"says\">sagt:</span>"
+#: functions.php:333
+#, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"time-elapsed\">%s</span>"
-msgstr "<cite class=„fn“>%s</cite> <span class=„says“>says:</span>"
+msgstr "<cite class=„fn“>%s</cite> <span class=„time-elapsed“>%s</span>"
 
-#: functions.php:349
+#: functions.php:336
 msgid "Ihr Kommentar wartet auf die Freischaltung."
 msgstr "Your comment is waiting for approval."
 
-#: functions.php:422
+#: functions.php:428
 msgid "Footer Column 1"
 msgstr "Footer Column 1"
 
-#: functions.php:424
+#: functions.php:430
 msgid "Appears on the first footer column."
 msgstr "Appears on the first footer column."
 
-#: functions.php:432
+#: functions.php:438
 msgid "Footer Column 2"
 msgstr "Footer Column 2"
 
-#: functions.php:434
+#: functions.php:440
 msgid "Appears on the second footer column."
 msgstr "Appears on the second footer column."
 
-#: functions.php:442 functions.php:452
+#: functions.php:448 functions.php:458
 msgid "Footer Column 3"
 msgstr "Footer Column 3"
 
-#: functions.php:444 functions.php:454
+#: functions.php:450 functions.php:460
 msgid "Appears on the third footer column."
 msgstr "Appears on the third footer column."
 
-#: header.php:99
+#: header.php:111
 msgid "Zum YouTube Kanal"
 msgstr "Go to YouTube"
 
-#: header.php:100
+#: header.php:112
 msgid "YouTube"
 msgstr "YouTube"
 
-#: header.php:106
+#: header.php:118
 msgid "Zur Geldhelden Akademie"
 msgstr "To the Geldhelden Academy"
 
-#: header.php:140
+#: header.php:152
 msgid "Themen"
 msgstr "Topics"
 
-#: header.php:141
+#: header.php:153
 msgid "Events"
 msgstr "Events"
 
-#: header.php:142
+#: header.php:154
 msgid "Gruppen"
 msgstr "Groups"
 
-#: header.php:143
+#: header.php:155
 msgid "Kurse"
 msgstr "Courses"
 
-#: header.php:144
+#: header.php:156
 msgid "MoneyHero Token"
 msgstr "MoneyHero Token"
 
-#: header.php:152
+#: header.php:164
 msgid "Chat"
 msgstr "Chat"
 
-#: header.php:154
+#: header.php:166
 msgid "Geldhelden Community"
 msgstr "Money heroes community"
 
-#: header.php:157
+#: header.php:169
 msgid "Online now"
 msgstr "Online now"
 
@@ -228,13 +231,13 @@ msgstr "Unknown update checker status „%s“"
 msgid "There is no changelog available."
 msgstr "There is no changelog available."
 
-#: loop.php:66
+#: loop.php:81
 #, fuzzy
 #| msgid "% Kommentare"
 msgid "Kommentare"
 msgstr "% comments"
 
-#: loop.php:82 page.php:30 single.php:114
+#: loop.php:97 page.php:30 single.php:144
 msgid "Keine Artikel gefunden."
 msgstr "No articles found."
 
@@ -251,17 +254,20 @@ msgstr "Type in search term and click enter."
 msgid "Suchen"
 msgstr "Search"
 
-#: single.php:13 single.php:63
+#: single.php:13 single.php:86
 msgid "Zurück zu allen Beiträgen"
 msgstr "Back to all articles"
 
-#: single.php:70
+#: single.php:93
 msgid "Weitere Beiträge"
 msgstr "Related Articles"
 
 #: tag.php:7
 msgid "Tag Archiv: "
 msgstr "Tag Archive: "
+
+#~ msgid "Kategorien für "
+#~ msgstr "Categories for "
 
 #~ msgid "Beitrag-Report"
 #~ msgstr "Article-Report"

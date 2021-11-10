@@ -35,6 +35,10 @@
 				$groups_link = $main_url . '/groups';
 				$courses_link = $main_url . '/courses';
 				$token_link = 'https://www.moneyhero.io/';
+                $icon_add_url = $main_url . '#';
+                $icon_messages_url = $main_url . '#';
+                $icon_notification_url = $main_url . '#';
+                $icon_profile_url = $main_url . '#';
 				break;
 
 			// English
@@ -45,6 +49,10 @@
 				$groups_link = $main_url . '/groups';
 				$courses_link = $main_url . '/courses';
 				$token_link = 'https://www.moneyhero.io/';
+                $icon_add_url = $main_url . '#';
+                $icon_messages_url = $main_url . '#';
+                $icon_notification_url = $main_url . '#';
+                $icon_profile_url = $main_url . '#';
 				break;
 
 			// German
@@ -55,6 +63,10 @@
 				$groups_link = $main_url . '/groups';
 				$courses_link = $main_url . '/courses';
 				$token_link = 'https://www.moneyhero.io/';
+                $icon_add_url = $main_url . '#';
+                $icon_messages_url = $main_url . '#';
+                $icon_notification_url = $main_url . '#';
+                $icon_profile_url = $main_url . '#';
 				break;
 
 		}
@@ -74,10 +86,10 @@
 
 			<div class="right-content">
 				<a class="header-icon icon-search-24" href="#"></a>
-				<a class="header-icon icon-add-boxed-fill-24" href="https://academy.geldhelden.org/feed#"></a>
-				<a class="header-icon icon-chat-fill-24" href="https://academy.geldhelden.org/feed#"></a>
-				<a class="header-icon icon-bell-straight-fill-24" href="https://academy.geldhelden.org/feed#"><span class="notification-count">2</span></a>
-				<a class="header-icon icon-avatar-40" href="https://academy.geldhelden.org/feed#"></a>
+				<a class="header-icon icon-add-boxed-fill-24" href="<?php echo create_analytics_link($icon_add_url); ?>"></a>
+				<a class="header-icon icon-chat-fill-24" href="<?php echo create_analytics_link($icon_messages_url); ?>"></a>
+				<a class="header-icon icon-bell-straight-fill-24" href="<?php echo create_analytics_link($icon_notification_url); ?>"><span class="notification-count">2</span></a>
+				<a class="header-icon icon-avatar-40" href="<?php echo create_analytics_link($icon_profile_url); ?>"></a>
 			</div>
 		</div>
 
@@ -103,7 +115,7 @@
                 <?php } ?>
 
 				<div class="logo">
-					<a href="<?php echo $main_url; ?>" title="<?php _e( 'Zur Geldhelden Akademie', 'geldhelden' );?>">
+					<a href="<?php echo create_analytics_link($main_url); ?>" title="<?php _e( 'Zur Geldhelden Akademie', 'geldhelden' );?>">
 						<img src="<?php echo get_template_directory_uri(); ?>/img/geldhelden-logo.webp" alt="Logo" class="logo-img">
 					</a>
 				</div>
@@ -137,11 +149,11 @@
 
 				<nav class="sidebar-nav second-nav" role="navigation">
 					<ul id="menu-seitenleiste-menue-2" class="menu">
-						<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="<?php echo esc_url_raw( $topics_link ); ?>"><?php _e('Themen', 'geldhelden'); ?></a></li>
-						<li id="menu-item-51" class="has-right-content menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="<?php echo esc_url_raw( $events_link ); ?>"><?php _e('Events', 'geldhelden'); ?></a></li>
-						<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="<?php echo esc_url_raw( $groups_link ); ?>"><?php _e('Gruppen', 'geldhelden'); ?></a></li>
-						<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a href="<?php echo esc_url_raw( $courses_link ); ?>"><?php _e('Kurse', 'geldhelden'); ?></a></li>
-						<li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo esc_url_raw( $token_link ); ?>"><?php _e('MoneyHero Token', 'geldhelden'); ?> 🚀</a></li>
+						<li id="menu-item-50" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50"><a href="<?php echo create_analytics_link( $topics_link ); ?>"><?php _e('Themen', 'geldhelden'); ?></a></li>
+						<li id="menu-item-51" class="has-right-content menu-item menu-item-type-custom menu-item-object-custom menu-item-51"><a href="<?php echo create_analytics_link( $events_link ); ?>"><?php _e('Events', 'geldhelden'); ?></a></li>
+						<li id="menu-item-52" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52"><a href="<?php echo create_analytics_link( $groups_link ); ?>"><?php _e('Gruppen', 'geldhelden'); ?></a></li>
+						<li id="menu-item-53" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53"><a href="<?php echo create_analytics_link( $courses_link ); ?>"><?php _e('Kurse', 'geldhelden'); ?></a></li>
+						<li id="menu-item-54" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-54"><a href="<?php echo create_analytics_link( $token_link ); ?>"><?php _e('MoneyHero Token', 'geldhelden'); ?> 🚀</a></li>
 					</ul>
 				</nav>
 
@@ -151,7 +163,7 @@
 
 					<div class="sidebar-chat-title"><? _e('Chat', 'geldhelden'); ?></div>
 					<ul class="chat-menu">
-						<li class="has-right-content"><a class="chat-room" href="https://academy.geldhelden.org/chats/2071480"><img class="chat-icon" src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=68&h=68&fit=crop&impolicy=Avatar&crop=faces"><?php _e('Geldhelden Community', 'geldhelden')?> </a></li>
+						<li class="has-right-content"><a class="chat-room" href="<?php echo create_analytics_link('https://academy.geldhelden.org/chats/2071480'); ?>"><img class="chat-icon" src="https://media1-production-mightynetworks.imgix.net/asset/14150824/geldhelden-favicon-2.png?ixlib=rails-0.3.0&auto=format&w=68&h=68&fit=crop&impolicy=Avatar&crop=faces"><?php _e('Geldhelden Community', 'geldhelden')?> </a></li>
 					</ul>
 
 					<div class="sidebar-chat-title sidebar-chat-online"><? _e('Online now', 'geldhelden'); ?><span class="online-now"></span></div>

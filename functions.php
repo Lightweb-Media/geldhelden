@@ -245,31 +245,14 @@ function html5wp_pagination()
     ));
 }
 
-// Custom Excerpts
-function html5wp_index($length)
-{
-    return 250;
-}
-
-function related_excerpt_length($length)
-{
-    return 10;
-}
-
-// Create the Custom Excerpts callback
-function html5wp_excerpt($length_callback = '', $more_callback = '')
+// Create the Custom Excerpts length
+function moneyhero_excerpt($length, $link = false)
 {
     global $post;
-    if (function_exists($length_callback)) {
-        add_filter('excerpt_length', $length_callback);
-    }
-    if (function_exists($more_callback)) {
-        add_filter('excerpt_more', $more_callback);
-    }
     $output = get_the_excerpt();
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
-    $output = '<p>' . $output . '</p>';
+    $output = '<p>' . substr($output, 0, $length) . ( $link == true ? '<a class="view-article" href="' . get_permalink($post->ID) . '">...' . __('Weiterlesen', 'geldhelden') . '</a>' : '' ) . '</p>';
     echo $output;
 }
 
@@ -324,6 +307,7 @@ function enable_threaded_comments()
 // Custom Comments Callback
 function html5blankcomments($comment, $args, $depth)
 {
+
 	$GLOBALS['comment'] = $comment;
 	extract($args, EXTR_SKIP);
 
@@ -341,7 +325,10 @@ function html5blankcomments($comment, $args, $depth)
 	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 	<div class="comment-author vcard">
-        <?php if ($args['avatar_size'] != 0){ echo get_avatar( $comment ); } ?>
+        <?php 
+        $profile_img = get_user_meta( $comment->user_id, 'profile_img', true );
+        if ($profile_img){ echo "<img src='" . esc_url_raw($profile_img) . "' height='96' width='96' loading='lazy' class='avatar avatar-96 photo'>"; } 
+        ?>
         <div class="commtent-details">
             <?php printf(__('<cite class="fn">%s</cite> <span class="time-elapsed">%s</span>', 'geldhelden'), get_comment_author_link(), smk_get_comment_time(get_comment_ID())) ?>
             <div class="comment-content">
@@ -362,6 +349,22 @@ function html5blankcomments($comment, $args, $depth)
 	</div>
 	<?php endif; ?>
 <?php }
+
+/* Add GA variable */
+function create_analytics_link( $link ){
+
+    $site_title = get_bloginfo( 'name' );
+    $site_title = str_replace( ' ', '', $site_title );
+
+    $new_link = add_query_arg( array(
+        'utm_source' => esc_attr($site_title),
+        'utm_medium' => 'theme',
+        'utm_campaign' => 'theme'
+    ), $link );
+
+    return esc_url_raw( $new_link );
+
+}
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -414,6 +417,9 @@ require_once(GELDHELDEN_DIR .'/backend/report-articles-form.php');
 
 // Require: Theme settings
 require_once(GELDHELDEN_DIR .'/backend/theme-settings.php');
+
+// Require: Profile img
+require_once(GELDHELDEN_DIR .'/backend/add-profile-img.php');
 
 // Add Footer Widget Areas
 function theme_slug_register_footer_widgets() {

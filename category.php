@@ -4,7 +4,7 @@
 		<!-- section -->
 		<section>
 
-			<h1><?php _e( 'Kategorien für ', 'geldhelden' ); single_cat_title(); ?></h1>
+			<h1><?php echo single_cat_title(); ?></h1>
 
 			<?php get_template_part('loop'); ?>
 
