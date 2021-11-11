@@ -18,6 +18,16 @@ Go to Settings -> Read -> Switch Homepage to "Show last Posts"
 
 ###Changelog###
 
+v2.1.5 11.11.2021
+
+- Excerpt limit by chars (loop and related posts)
+- Remove pre category title
+- Added profile image url input in profile page (backend)
+- Changed profile image source in loop, single post and related posts
+- Added parameters for GA Campaigns
+- Footer wrapped in white boxes
+
+
 v2.1.4 02.11.2021
 Bugfixes
 - iframe 100% width (crashing responsive design)
