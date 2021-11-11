@@ -19,9 +19,13 @@
             $lname = get_the_author_meta('last_name');
             $full_name = $fname . " " . $lname;
 
+            $profile_img = get_user_meta( get_current_user_id(), 'profile_img', true );
+
             if( strlen($full_name) > 1 ){ ?>
                 <div class="author-profile-box">
-                    <div class="author-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?></a></div>
+                    <?php if($profile_img){ ?>
+                        <div class="author-profile-image"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><img src="<?php echo esc_url_raw( $profile_img ); ?>" title="<?php echo trim( $full_name ); ?>"></a></div>
+                    <?php } ?>
                     <div class="author-profile-name"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo trim( $full_name ); ?></a></div>
                 </div>
             <?php } ?>
@@ -41,7 +45,7 @@
 		</h2>
 		<!-- /post title -->
 
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+		<?php moneyhero_excerpt(300, true); ?>
 
         <!-- post categories / tags -->
         <?php $categories = get_the_category(); ?>
