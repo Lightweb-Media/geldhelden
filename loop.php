@@ -19,7 +19,7 @@
             $lname = get_the_author_meta('last_name');
             $full_name = $fname . " " . $lname;
 
-            $profile_img = get_user_meta( get_current_user_id(), 'profile_img', true );
+            $profile_img = get_user_meta( get_the_author_meta( 'ID' ), 'profile_img', true );
 
             if( strlen($full_name) > 1 ){ ?>
                 <div class="author-profile-box">
@@ -57,7 +57,7 @@
                 <?php foreach( $categories as $category ){ ?>
 			        <li <?php echo ( $i > 5 ? 'class="li-hidden"' : ''); ?>><a href="<?php echo get_term_link($category->term_id); ?>"><?php echo $category->name; ?></a></li>
                     <?php $i++; ?>
-                <?php } ?>
+                <?php } ?> 
             <?php } ?>
 
             <?php if( $tags ){ ?>
