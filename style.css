@@ -1000,6 +1000,10 @@ ul#related-articles-list {
     margin-right: -4px;
 }
 
+ul#related-articles-list li a.post-grid-item-inner{
+    display: contents;
+}
+
 a.comment-reply-link {
     color: #FF4D79;
     font-size: 16px;

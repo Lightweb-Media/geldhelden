@@ -252,7 +252,7 @@ function moneyhero_excerpt($length, $link = false)
     $output = get_the_excerpt();
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
-    $output = '<p>' . substr($output, 0, $length) . ( $link == true ? '<a class="view-article" href="' . get_permalink($post->ID) . '">...' . __('Weiterlesen', 'geldhelden') . '</a>' : '' ) . '</p>';
+    $output = '<p>' . trim(mb_substr($output, 0, $length, 'UTF-8')) . ( $link == true ? '<a class="view-article" href="' . get_permalink($post->ID) . '">...' . __('Weiterlesen', 'geldhelden') . '</a>' : '' ) . '</p>';
     echo $output;
 }
 
