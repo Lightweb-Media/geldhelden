@@ -26,6 +26,8 @@ v2.1.5 11.11.2021
 - Changed profile image source in loop, single post and related posts
 - Added parameters for GA Campaigns
 - Footer wrapped in white boxes
+- Related Articles: fixed author box 
+- Fixed: Excerpt encoding special characters 
 
 
 v2.1.4 02.11.2021
