@@ -9,6 +9,10 @@
 				<div id="footer-widgets-wrap" class="footer-widgets-wrap">
 
 					<div id="footer-widgets" class="footer-widgets" role="complementary">
+						
+						<div class="footer-widget-column widget-area">
+							<div class="nomics-ticker-widget" data-name="Moneyhero" data-base="MYH" data-quote="USD"></div><script src="https://widget.nomics.com/embed.js"></script>
+						</div>
 
 						<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
 
