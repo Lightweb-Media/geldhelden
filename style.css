@@ -1172,6 +1172,25 @@ footer {
     RESPONSIVE
 \*------------------------------------*/
 
+@media (max-width: 768px){
+    section {
+        width:100%;
+    }
+	h1 {
+       font-size:26px!important;
+			word-break:break-word;
+    }
+	h2 {
+       font-size:26px;
+			word-break:break-word;
+    }
+}
+
+@media (max-width: 500px) {
+	.post-meta-box {
+			display:none;
+	}
+}
 
 @media (min-width: 768px){
     section {
