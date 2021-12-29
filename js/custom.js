@@ -57,6 +57,10 @@ jQuery(document).ready(function() {
         } 
     });
 
+    // Toogle Search on Mobile
+    jQuery('#search-btn-mobile').click(function () {
+        jQuery('div#header-search').slideToggle();
+    });
 
 });
 

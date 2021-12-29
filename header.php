@@ -85,7 +85,7 @@
 			</div>
 
 			<div class="right-content">
-				<a class="header-icon icon-search-24" href="#"></a>
+				<a id="search-btn-mobile" class="header-icon icon-search-24" href="#"></a>
 				<a class="header-icon icon-add-boxed-fill-24" href="<?php echo create_analytics_link($icon_add_url); ?>"></a>
 				<a class="header-icon icon-chat-fill-24" href="<?php echo create_analytics_link($icon_messages_url); ?>"></a>
 				<a class="header-icon icon-bell-straight-fill-24" href="<?php echo create_analytics_link($icon_notification_url); ?>"><span class="notification-count">2</span></a>
