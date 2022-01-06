@@ -56,6 +56,8 @@ main p, article ul, article ol {
     line-height: 1.7em;
 }
 
+main p { word-break:break-word;}
+
 main article ul li, main article ol li {
     margin-bottom: 1em;
 }
