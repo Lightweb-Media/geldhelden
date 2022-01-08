@@ -2,7 +2,7 @@
 	Theme Name: MoneyHero
 	Theme URI: https://github/Lightweb-Media/MoneyHero
 	Description: MoneyHero Theme 
-	Version: 2.1.5
+	Version: 2.1.6
 	Author: Lightweb Media
 	Author URI: https://lightweb-media.de
 	Tags: Blank, HTML5, CSS3
@@ -55,8 +55,6 @@ main h1{
 main p, article ul, article ol {
     line-height: 1.7em;
 }
-
-main p { word-break:break-word;}
 
 main article ul li, main article ol li {
     margin-bottom: 1em;
@@ -766,8 +764,10 @@ div#sidebar-right img {
 	CONTENT
 \*------------------------------------*/
 
+	
+
 main section article, .footer-widget-column {
-    padding: 24px 40px;
+    padding: 24px;
     margin-bottom: 25px;
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
@@ -777,7 +777,11 @@ main section article, .footer-widget-column {
     -webkit-box-shadow: 0 0 1px 0 rgb(0 0 0 / 5%), 0 1px 20px 0 rgb(0 0 0 / 15%);
     box-shadow: 0 0 1px 0 rgb(0 0 0 / 5%), 0 1px 20px 0 rgb(0 0 0 / 15%);
 }
-
+@media (max-width: 620px){
+	main section article, .footer-widget-column {
+    	padding: 15px;
+	}
+}
 ul.loop-post-tags {
     margin: 0;
     padding: 0;
@@ -1303,7 +1307,7 @@ footer {
     }
     div#footer-widgets .footer-widget-column {
         width: 100%;
-        padding: 10px 32px;
+        padding-top: 10px;
     }
     .author-profile-image img{
         height: 38px;
@@ -1313,9 +1317,6 @@ footer {
     }
     .post-meta-box {
         font-size: 15px;
-    }
-    main section article{
-        padding: 24px;
     }
     #post-comments ul.children{
         padding-left: 45px;
