@@ -1,0 +1,418 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-11-10 13:28+0100\n"
+"PO-Revision-Date: 2021-11-10 13:29+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_EN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_html;esc_html__;esc_att;esc_attr__;"
+"esc_attr_e;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:10
+msgid "Seite nicht gefunden"
+msgstr "Page not found"
+
+#: 404.php:12
+msgid "Zur Startseite?"
+msgstr "Go to home?"
+
+#: archive.php:7
+msgid "Archive"
+msgstr "Archive"
+
+#: author.php:9
+msgid "Author Archiv für "
+msgstr "Author Archiv for "
+
+#: author.php:15
+msgid "Über "
+msgstr "About "
+
+#: author.php:42
+msgid "Veröffentlicht von"
+msgstr "Published from"
+
+#: author.php:43
+msgid "Kommentar hinterlassen"
+msgstr "Leave comment"
+
+#: author.php:43
+msgid "1 Comment"
+msgstr "1 Comment"
+
+#: author.php:43
+msgid "% Comments"
+msgstr "% Comments"
+
+#: author.php:62
+msgid "Nichts gefunden."
+msgstr "Not found."
+
+#: backend/add-profile-img.php:12 backend/add-profile-img.php:16
+msgid "Profilbild"
+msgstr "Profile image"
+
+#: backend/add-profile-img.php:19
+msgid "Füge einen Link zu deinem Profilbild hinzu."
+msgstr "Add a link to your profile image."
+
+#: backend/theme-settings.php:13
+msgid "Geldhelden Theme"
+msgstr "Geldhelden Theme"
+
+#: backend/theme-settings.php:43
+msgid "Geldhelden Einstellungen"
+msgstr "Geldhelden Settings"
+
+#: backend/theme-settings.php:55
+msgid "Eigenes Logo"
+msgstr "Own Logo"
+
+#: backend/theme-settings.php:63
+msgid "Sprache"
+msgstr "Language"
+
+#: backend/theme-settings.php:68
+msgid "Deutsch"
+msgstr "German"
+
+#: backend/theme-settings.php:75
+msgid "Englisch"
+msgstr "English"
+
+#: backend/theme-settings.php:82
+msgid "Russisch"
+msgstr "Russian"
+
+#: comments.php:3
+msgid "Der Beitrag ist passwortgesichert. Bitte geben Sie das Passwort ein."
+msgstr "The post is password-protected. Please enter the password."
+
+#: comments.php:18
+msgid "Kommentare nicht erlaubt."
+msgstr "Comments not allowed."
+
+#: functions.php:156
+msgid "Header Menü"
+msgstr "Header Menu"
+
+#: functions.php:157
+msgid "Sidebar Menü"
+msgstr "Sidebar Menu"
+
+#: functions.php:158
+msgid "Extra Menü"
+msgstr "Extra Menu"
+
+#: functions.php:204
+msgid "Widget Area 1"
+msgstr "Widget Area 1"
+
+#: functions.php:205
+msgid "Beschreibung Widget Area 1"
+msgstr "Description Widget Area 1"
+
+#: functions.php:215
+msgid "Widget Area 2"
+msgstr "Widget Area 2"
+
+#: functions.php:216
+msgid "Beschreibung Widget Area 2"
+msgstr "Description Widget Area 2"
+
+#: functions.php:255 functions.php:273
+msgid "Weiterlesen"
+msgstr "Read more"
+
+#: functions.php:333
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"time-elapsed\">%s</span>"
+msgstr "<cite class=„fn“>%s</cite> <span class=„time-elapsed“>%s</span>"
+
+#: functions.php:336
+msgid "Ihr Kommentar wartet auf die Freischaltung."
+msgstr "Your comment is waiting for approval."
+
+#: functions.php:428
+msgid "Footer Column 1"
+msgstr "Footer Column 1"
+
+#: functions.php:430
+msgid "Appears on the first footer column."
+msgstr "Appears on the first footer column."
+
+#: functions.php:438
+msgid "Footer Column 2"
+msgstr "Footer Column 2"
+
+#: functions.php:440
+msgid "Appears on the second footer column."
+msgstr "Appears on the second footer column."
+
+#: functions.php:448 functions.php:458
+msgid "Footer Column 3"
+msgstr "Footer Column 3"
+
+#: functions.php:450 functions.php:460
+msgid "Appears on the third footer column."
+msgstr "Appears on the third footer column."
+
+#: header.php:111
+msgid "Zum YouTube Kanal"
+msgstr "Go to YouTube"
+
+#: header.php:112
+msgid "YouTube"
+msgstr "YouTube"
+
+#: header.php:118
+msgid "Zur Geldhelden Akademie"
+msgstr "To the Geldhelden Academy"
+
+#: header.php:152
+msgid "Themen"
+msgstr "Topics"
+
+#: header.php:153
+msgid "Events"
+msgstr "Events"
+
+#: header.php:154
+msgid "Gruppen"
+msgstr "Groups"
+
+#: header.php:155
+msgid "Kurse"
+msgstr "Courses"
+
+#: header.php:156
+msgid "MoneyHero Token"
+msgstr "MoneyHero Token"
+
+#: header.php:164
+msgid "Chat"
+msgstr "Chat"
+
+#: header.php:166
+msgid "Geldhelden Community"
+msgstr "Money heroes community"
+
+#: header.php:169
+msgid "Online now"
+msgstr "Online now"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:54
+msgid "View details"
+msgstr "View details"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:77
+#, php-format
+msgid "More information about %s"
+msgstr "More information about %s"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr "Check for updates"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:224
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Unknown update checker status „%s“"
+
+#: inc/plugin-update-checker/Puc/v4p11/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "There is no changelog available."
+
+#: loop.php:81
+#, fuzzy
+#| msgid "% Kommentare"
+msgid "Kommentare"
+msgstr "% comments"
+
+#: loop.php:97 page.php:30 single.php:144
+msgid "Keine Artikel gefunden."
+msgstr "No articles found."
+
+#: search.php:7
+#, php-format
+msgid "%s Suchergebnisse gefunden für "
+msgstr "%s search results found for "
+
+#: searchform.php:3
+msgid "Suchwort eingeben und Enter drücken."
+msgstr "Type in search term and click enter."
+
+#: searchform.php:4
+msgid "Suchen"
+msgstr "Search"
+
+#: single.php:13 single.php:86
+msgid "Zurück zu allen Beiträgen"
+msgstr "Back to all articles"
+
+#: single.php:93
+msgid "Weitere Beiträge"
+msgstr "Related Articles"
+
+#: tag.php:7
+msgid "Tag Archiv: "
+msgstr "Tag Archive: "
+
+#~ msgid "Kategorien für "
+#~ msgstr "Categories for "
+
+#~ msgid "Beitrag-Report"
+#~ msgstr "Article-Report"
+
+#~ msgid "Beitrags-Report senden"
+#~ msgstr "Send Article-Report"
+
+#, php-format
+#~ msgid ""
+#~ "Anfrage erfolgreich versendet. Sie haben im gewählten Zeitraum %d "
+#~ "Beiträge mit über 1.000 Wörtern veröffentlicht."
+#~ msgstr ""
+#~ "Report successfully sent. You have published %d articles with over 1,000 "
+#~ "words in the selected period."
+
+#~ msgid ""
+#~ "Sie haben im gewählten Zeitraum keine Beiträge mit über 1.000 Wörtern "
+#~ "veröffentlicht."
+#~ msgstr ""
+#~ "You have no published articles with over 1,000 words in the selected "
+#~ "period."
+
+#~ msgid ""
+#~ "Der Beitrags-Report wurde nicht abgeschickt, da dieser für den gewählten "
+#~ "Zeitraum bereits versendet wurde!"
+#~ msgstr ""
+#~ "The contribution report was not sent, because it has already been sent "
+#~ "for the selected period!"
+
+#~ msgid ""
+#~ "Der Beitrags-Report wurde nicht abgeschickt, da der gewählte Zeitraum "
+#~ "noch nicht vorbei ist!"
+#~ msgstr ""
+#~ "The contribution report was not sent, because the selected period is not "
+#~ "over yet!"
+
+#~ msgid "Wallet-ID"
+#~ msgstr "Wallet-ID"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "E-Mail"
+#~ msgstr "E-Mail"
+
+#~ msgid "Monat"
+#~ msgstr "Month"
+
+#~ msgid "Bitte auswählen..."
+#~ msgstr "Please select…"
+
+#~ msgid "Jahr"
+#~ msgstr "Year"
+
+#~ msgid "Absenden"
+#~ msgstr "Send"
+
+#~ msgid "Beiträge der letzten 45 Tage"
+#~ msgstr "Posts from the last 45 days"
+
+#~ msgid "Titel"
+#~ msgstr "Title"
+
+#~ msgid "Datum"
+#~ msgstr "Date"
+
+#~ msgid "Wörter"
+#~ msgstr "Words"
+
+#~ msgid "Veröffentlicht"
+#~ msgstr "Published on"
+
+#~ msgid "Leider ist ein Fehler aufgetreten! Bitte versuchen Sie es erneut!"
+#~ msgstr "Sorry, an error has occurred! Please try again!"
+
+#, php-format
+#~ msgid "Auszahlung beantragt: %s"
+#~ msgstr "Payment requested: %s"
+
+#, php-format
+#~ msgid "Neue Auszahlung beantragt für %d. %d"
+#~ msgstr "New payout requested for %d. %d"
+
+#, php-format
+#~ msgid "Wallet-ID: %s"
+#~ msgstr "Wallet-ID: %s"
+
+#, php-format
+#~ msgid "Name: %s"
+#~ msgstr "Name: %s"
+
+#, php-format
+#~ msgid "E-Mail: %s"
+#~ msgstr "E-Mail: %s"
+
+#, php-format
+#~ msgid "Artikel über 1000 Wörter: %d"
+#~ msgstr "Articles over 1000 words: %d"
+
+#, php-format
+#~ msgid "Blog: %s - %s"
+#~ msgstr "Blog: %s - %s"
+
+#, php-format
+#~ msgid ""
+#~ "Denke daran deinen <a href=\"%s\">Beitrags-Report</a> für diesen Monat "
+#~ "abzuschicken!"
+#~ msgstr ""
+#~ "Remember to send your <a href=„%s“>article report</a> for this month!"
+
+#~ msgid "Zum Artikel"
+#~ msgstr "Go to article"
+
+#, php-format
+#~ msgid "%1$s am %2$s"
+#~ msgstr "%1$s at %2$s"
+
+#~ msgid "(Bearbeiten)"
+#~ msgstr "(Edit)"
+
+#~ msgid "Aktuelle Artikel"
+#~ msgstr "Recent Articles"
+
+#~ msgid "Kommentar verfassen"
+#~ msgstr "Write comment"
+
+#~ msgid "1 Kommentar"
+#~ msgstr "1 comment"
+
+#~ msgid "Tags: "
+#~ msgstr "Tags: "
+
+#~ msgid "Kategorien: "
+#~ msgstr "Categories: "
+
+#, php-format
+#~ msgid "- Prüfung der autom. Berechnung: %d"
+#~ msgstr "- Check from the autom. Calculation: %d"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Your comment is awaiting moderation."
+
+#~ msgid "(Edit)"
+#~ msgstr "(Edit)"
+
+#, php-format
+#~ msgid "Artikel gesamt: %d"
+#~ msgstr "Total articles: %d"

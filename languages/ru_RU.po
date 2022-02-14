@@ -1,0 +1,418 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-11-10 13:29+0100\n"
+"PO-Revision-Date: 2021-11-10 13:30+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr;esc_att;esc_attr_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:10
+msgid "Seite nicht gefunden"
+msgstr "Cтраница не найдена"
+
+#: 404.php:12
+msgid "Zur Startseite?"
+msgstr "На главную страницу?"
+
+#: archive.php:7
+msgid "Archive"
+msgstr "Aрхив"
+
+#: author.php:9
+msgid "Author Archiv für "
+msgstr "Архив автора для "
+
+#: author.php:15
+msgid "Über "
+msgstr "Об авторе "
+
+#: author.php:42
+msgid "Veröffentlicht von"
+msgstr "Опубликовано"
+
+#: author.php:43
+msgid "Kommentar hinterlassen"
+msgstr "Оставить комментарий"
+
+#: author.php:43
+msgid "1 Comment"
+msgstr "1 Комментарий"
+
+#: author.php:43
+msgid "% Comments"
+msgstr "% комментария"
+
+#: author.php:62
+msgid "Nichts gefunden."
+msgstr "Ничего не найдено."
+
+#: backend/add-profile-img.php:12 backend/add-profile-img.php:16
+msgid "Profilbild"
+msgstr "Изображение профиля"
+
+#: backend/add-profile-img.php:19
+msgid "Füge einen Link zu deinem Profilbild hinzu."
+msgstr "Добавьте ссылку на изображение вашего профиля."
+
+#: backend/theme-settings.php:13
+msgid "Geldhelden Theme"
+msgstr "Geldhelden Theme"
+
+#: backend/theme-settings.php:43
+msgid "Geldhelden Einstellungen"
+msgstr "Geldhelden настройки"
+
+#: backend/theme-settings.php:55
+msgid "Eigenes Logo"
+msgstr "Собственный логотип"
+
+#: backend/theme-settings.php:63
+msgid "Sprache"
+msgstr "Язык"
+
+#: backend/theme-settings.php:68
+msgid "Deutsch"
+msgstr "Немецкий"
+
+#: backend/theme-settings.php:75
+msgid "Englisch"
+msgstr "Aнглийский"
+
+#: backend/theme-settings.php:82
+msgid "Russisch"
+msgstr "Pусский"
+
+#: comments.php:3
+msgid "Der Beitrag ist passwortgesichert. Bitte geben Sie das Passwort ein."
+msgstr "Сообщение защищено паролем. Пожалуйста, введите пароль."
+
+#: comments.php:18
+msgid "Kommentare nicht erlaubt."
+msgstr "Комментарии не допускаются."
+
+#: functions.php:156
+msgid "Header Menü"
+msgstr "Заголовочное меню"
+
+#: functions.php:157
+msgid "Sidebar Menü"
+msgstr "Боковое меню"
+
+#: functions.php:158
+msgid "Extra Menü"
+msgstr "Дополнительное меню"
+
+#: functions.php:204
+msgid "Widget Area 1"
+msgstr "Область виджетов 1"
+
+#: functions.php:205
+msgid "Beschreibung Widget Area 1"
+msgstr "Описание Область виджетов 1"
+
+#: functions.php:215
+msgid "Widget Area 2"
+msgstr "Область виджетов 2"
+
+#: functions.php:216
+msgid "Beschreibung Widget Area 2"
+msgstr "Описание Область виджетов 2"
+
+#: functions.php:255 functions.php:273
+msgid "Weiterlesen"
+msgstr "продолжить чтение"
+
+#: functions.php:333
+#, php-format
+msgid "<cite class=\"fn\">%s</cite> <span class=\"time-elapsed\">%s</span>"
+msgstr "<cite class=„fn“>%s</cite> <span class=„time-elapsed“>%s</span>"
+
+#: functions.php:336
+msgid "Ihr Kommentar wartet auf die Freischaltung."
+msgstr "Ваш комментарий ожидает активации."
+
+#: functions.php:428
+msgid "Footer Column 1"
+msgstr "Столбец нижнего колонтитула 1"
+
+#: functions.php:430
+msgid "Appears on the first footer column."
+msgstr "Отображается в первом нижнем колонтитуле."
+
+#: functions.php:438
+msgid "Footer Column 2"
+msgstr "Столбец нижнего колонтитула 2"
+
+#: functions.php:440
+msgid "Appears on the second footer column."
+msgstr "Появляется во втором нижнем колонтитуле."
+
+#: functions.php:448 functions.php:458
+msgid "Footer Column 3"
+msgstr "Столбец нижнего колонтитула 3"
+
+#: functions.php:450 functions.php:460
+msgid "Appears on the third footer column."
+msgstr "Появляется в третьем нижнем колонтитуле."
+
+#: header.php:111
+msgid "Zum YouTube Kanal"
+msgstr "перейти в YouTube"
+
+#: header.php:112
+msgid "YouTube"
+msgstr "YouTube"
+
+#: header.php:118
+msgid "Zur Geldhelden Akademie"
+msgstr "MoneyHeroes Русскоговорящее сообщество Home"
+
+#: header.php:152
+msgid "Themen"
+msgstr "Topics"
+
+#: header.php:153
+msgid "Events"
+msgstr "Events"
+
+#: header.php:154
+msgid "Gruppen"
+msgstr "Группы"
+
+#: header.php:155
+msgid "Kurse"
+msgstr "Курсы"
+
+#: header.php:156
+msgid "MoneyHero Token"
+msgstr "MoneyHero Token"
+
+#: header.php:164
+msgid "Chat"
+msgstr "Чат"
+
+#: header.php:166
+msgid "Geldhelden Community"
+msgstr "MoneyHeroes Русскоговорящее сообщество"
+
+#: header.php:169
+msgid "Online now"
+msgstr "Сейчас в сети"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:54
+msgid "View details"
+msgstr "Посмотреть детали"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:77
+#, php-format
+msgid "More information about %s"
+msgstr "Больше информации о %s"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr "Проверить обновления"
+
+#: inc/plugin-update-checker/Puc/v4p11/Plugin/Ui.php:224
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr "Неизвестный статус средства проверки обновлений „%s“"
+
+#: inc/plugin-update-checker/Puc/v4p11/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr "Журнал изменений отсутствует."
+
+#: loop.php:81
+msgid "Kommentare"
+msgstr "Kомментариев"
+
+#: loop.php:97 page.php:30 single.php:144
+msgid "Keine Artikel gefunden."
+msgstr "Статьи не найдены."
+
+#: search.php:7
+#, php-format
+msgid "%s Suchergebnisse gefunden für "
+msgstr "Найдено %s результатов поиска по запросу "
+
+#: searchform.php:3
+msgid "Suchwort eingeben und Enter drücken."
+msgstr "Введите слово для поиска и нажмите Enter."
+
+#: searchform.php:4
+msgid "Suchen"
+msgstr "Стремиться"
+
+#: single.php:13 single.php:86
+msgid "Zurück zu allen Beiträgen"
+msgstr "Вернуться ко всем сообщениям"
+
+#: single.php:93
+#, fuzzy
+#| msgid "Anzahl Beiträge"
+msgid "Weitere Beiträge"
+msgstr "Количество постов"
+
+#: tag.php:7
+msgid "Tag Archiv: "
+msgstr "Архив тегов: "
+
+#~ msgid "Kategorien für "
+#~ msgstr "Категории для "
+
+#~ msgid "Beitrag-Report"
+#~ msgstr "Опубликовать отчет"
+
+#~ msgid "Beitrags-Report senden"
+#~ msgstr "Отправить отчет о вкладе"
+
+#, php-format
+#~ msgid ""
+#~ "Anfrage erfolgreich versendet. Sie haben im gewählten Zeitraum %d "
+#~ "Beiträge mit über 1.000 Wörtern veröffentlicht."
+#~ msgstr ""
+#~ "Запрос успешно отправлен. За выбранный период вы опубликовали %d статей, "
+#~ "содержащих более 1000 слов."
+
+#~ msgid ""
+#~ "Sie haben im gewählten Zeitraum keine Beiträge mit über 1.000 Wörtern "
+#~ "veröffentlicht."
+#~ msgstr ""
+#~ "Вы не публиковали статей, содержащих более 1000 слов за выбранный период."
+
+#~ msgid ""
+#~ "Der Beitrags-Report wurde nicht abgeschickt, da dieser für den gewählten "
+#~ "Zeitraum bereits versendet wurde!"
+#~ msgstr ""
+#~ "Отчет о взносах не был отправлен, потому что он уже был отправлен за "
+#~ "выбранный период!"
+
+#~ msgid ""
+#~ "Der Beitrags-Report wurde nicht abgeschickt, da der gewählte Zeitraum "
+#~ "noch nicht vorbei ist!"
+#~ msgstr ""
+#~ "Отчет о взносах не был отправлен, потому что выбранный период еще не "
+#~ "прошел!"
+
+#~ msgid "Wallet-ID"
+#~ msgstr "ID кошелька"
+
+#~ msgid "Name"
+#~ msgstr "Фамилия"
+
+#~ msgid "E-Mail"
+#~ msgstr "Эл. почта"
+
+#~ msgid "Monat"
+#~ msgstr "Mесяц"
+
+#~ msgid "Bitte auswählen..."
+#~ msgstr "Пожалуйста, выберите…"
+
+#~ msgid "Jahr"
+#~ msgstr "Rод"
+
+#~ msgid "Absenden"
+#~ msgstr "Представить форму"
+
+#~ msgid "Beiträge der letzten 45 Tage"
+#~ msgstr "Сообщения за последние 45 дней"
+
+#~ msgid "Titel"
+#~ msgstr "Заголовок"
+
+#~ msgid "Datum"
+#~ msgstr "Дата"
+
+#~ msgid "Wörter"
+#~ msgstr "Cлова"
+
+#~ msgid "Veröffentlicht"
+#~ msgstr "Опубликовано"
+
+#~ msgid "Leider ist ein Fehler aufgetreten! Bitte versuchen Sie es erneut!"
+#~ msgstr "Извините, произошла ошибка! Пожалуйста, попробуйте еще раз!"
+
+#, php-format
+#~ msgid "Auszahlung beantragt: %s"
+#~ msgstr "Запрошена оплата: %s"
+
+#, php-format
+#~ msgid "Neue Auszahlung beantragt für %d. %d"
+#~ msgstr "Запрошена новая выплата на сумму %d. %d"
+
+#, php-format
+#~ msgid "Wallet-ID: %s"
+#~ msgstr "ID кошелька: %s"
+
+#, php-format
+#~ msgid "Name: %s"
+#~ msgstr "Фамилия: %s"
+
+#, php-format
+#~ msgid "E-Mail: %s"
+#~ msgstr "Эл. почта: %s"
+
+#, php-format
+#~ msgid "Artikel über 1000 Wörter: %d"
+#~ msgstr "- в том числе статьи более 1000 слов: %d"
+
+#, php-format
+#~ msgid "Blog: %s - %s"
+#~ msgstr "Блог: %s - %s"
+
+#, php-format
+#~ msgid ""
+#~ "Denke daran deinen <a href=\"%s\">Beitrags-Report</a> für diesen Monat "
+#~ "abzuschicken!"
+#~ msgstr ""
+#~ "Не забудьте отправить свой <a href=„%s“> отчет о взносах </a> за этот "
+#~ "месяц!"
+
+#~ msgid "Zum Artikel"
+#~ msgstr "Перейти к статье"
+
+#, php-format
+#~ msgid "%1$s am %2$s"
+#~ msgstr "%1$s на %2$s"
+
+#~ msgid "(Bearbeiten)"
+#~ msgstr "(Редактировать)"
+
+#~ msgid "Aktuelle Artikel"
+#~ msgstr "Текущие статьи"
+
+#~ msgid "Kommentar verfassen"
+#~ msgstr "Написать комментарий"
+
+#~ msgid "1 Kommentar"
+#~ msgstr "1 Комментарий"
+
+#~ msgid "Tags: "
+#~ msgstr "Теги: "
+
+#~ msgid "Kategorien: "
+#~ msgstr "Категории: "
+
+#, php-format
+#~ msgid "- Prüfung der autom. Berechnung: %d"
+#~ msgstr "- Проверить автом. Расчет: %d"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Ваш комментарий ожидает модерации."
+
+#~ msgid "(Edit)"
+#~ msgstr "(Редактировать)"
+
+#, php-format
+#~ msgid "Artikel gesamt: %d"
+#~ msgstr "Итого по статье: %d"

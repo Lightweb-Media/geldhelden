@@ -1,27 +1,73 @@
 <?php
 /*
-	Theme Name: Geldhelden
-	Theme URI: https://github/Lightweb-Media/geldhelden
-	Description: Geldhelden Theme 
-	Version: 2.1.0
-	Author: Bastian van Holt
+	Theme Name: MoneyHero
+	Theme URI: https://github/Lightweb-Media/moneyhero
+	Description: MoneyHero Theme 
+	Version: 2.1.5
+	Author: Lightweb Media
 	Author URI: https://lightweb-media.de
 	Tags: Blank, HTML5, CSS3
 	License: MIT
 	License URI: http://opensource.org/licenses/mit-license.php
 */
 
+define ('GELDHELDEN_DIR',get_template_directory());
+require_once(GELDHELDEN_DIR .'/inc/plugin-update-checker/plugin-update-checker.php');
+require_once(GELDHELDEN_DIR .'/inc/hide-title-function/hide-title-class.php');
 
+$GeldheldenUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/lightweb-media/moneyhero/',
+	__FILE__, //Full path to the main plugin file or functions.php.
+	'moneyhero'
+);
 
-add_action( 'after_setup_theme', function() {
-	get_template_part( 'inc/classes/Updater' );
-});
-
-
+$GeldheldenUpdateChecker->setBranch('main');
 if (!isset($content_width))
 {
     $content_width = 900;
 }
+
+// Redirect in backend, if language not set
+function redirect_if_lang_not_set(){
+
+    if ( $GLOBALS['pagenow'] != 'wp-login.php' && $GLOBALS['pagenow'] != 'options.php' && is_admin() ) {
+        $geldhelden_language = esc_attr( get_option('geldhelden_language') );
+
+        if( empty($geldhelden_language) ){
+
+            if( isset( $GLOBALS['_GET']['page'] ) && $GLOBALS['_GET']['page'] == 'geldhelden' ){
+                return;
+            }
+
+            wp_redirect( admin_url('/admin.php?page=geldhelden', 'https') );
+            exit;
+
+        }
+    }   
+}
+add_action('init', 'redirect_if_lang_not_set');
+
+// Change Language
+function change_global_locale($locale) {
+    $geldhelden_language = esc_attr( get_option('geldhelden_language') );
+
+    if( isset($geldhelden_language) ){
+        switch_to_locale($geldhelden_language);
+    }
+}
+add_filter('init','change_global_locale');
+
+add_filter('locale', function($locale) {
+
+    $geldhelden_language = esc_attr( get_option('geldhelden_language') );
+    
+    if( isset($geldhelden_language) ){
+        return $geldhelden_language;
+    }else{
+        return $locale;
+    }
+
+});
 
 if (function_exists('add_theme_support'))
 {
@@ -39,7 +85,7 @@ if (function_exists('add_theme_support'))
     add_theme_support('automatic-feed-links');
 
     // Localisation Support
-    load_theme_textdomain('html5blank', get_template_directory() . '/languages');
+    load_theme_textdomain('geldhelden', get_template_directory() . '/languages');
 }
 
 /*------------------------------------*\
@@ -108,9 +154,9 @@ function html5blank_styles()
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
-        'header-menu' => __('Header Menu', 'html5blank'), // Main Navigation
-        'sidebar-menu' => __('Sidebar Menu', 'html5blank'), // Sidebar Navigation
-        'extra-menu' => __('Extra Menu', 'html5blank') // Extra Navigation if needed (duplicate as many as you need!)
+        'header-menu' => __('Header Menü', 'geldhelden'), // Main Navigation
+        'sidebar-menu' => __('Sidebar Menü', 'geldhelden'), // Sidebar Navigation
+        'extra-menu' => __('Extra Menü', 'geldhelden') // Extra Navigation if needed (duplicate as many as you need!)
     ));
 }
 
@@ -156,8 +202,8 @@ if (function_exists('register_sidebar'))
 {
     // Define Sidebar Widget Area 1
     register_sidebar(array(
-        'name' => __('Widget Area 1', 'html5blank'),
-        'description' => __('Description for this widget-area...', 'html5blank'),
+        'name' => __('Widget Area 1', 'geldhelden'),
+        'description' => __('Beschreibung Widget Area 1', 'geldhelden'),
         'id' => 'widget-area-1',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
@@ -167,8 +213,8 @@ if (function_exists('register_sidebar'))
 
     // Define Sidebar Widget Area 2
     register_sidebar(array(
-        'name' => __('Widget Area 2', 'html5blank'),
-        'description' => __('Description for this widget-area...', 'html5blank'),
+        'name' => __('Widget Area 2', 'geldhelden'),
+        'description' => __('Beschreibung Widget Area 2', 'geldhelden'),
         'id' => 'widget-area-2',
         'before_widget' => '<div id="%1$s" class="%2$s">',
         'after_widget' => '</div>',
@@ -200,46 +246,32 @@ function html5wp_pagination()
     ));
 }
 
-// Custom Excerpts
-function html5wp_index($length) // Create 20 Word Callback for Index page Excerpts, call using html5wp_excerpt('html5wp_index');
-{
-    return 20;
-}
-
-// Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
-function html5wp_custom_post($length)
-{
-    return 40;
-}
-
-// Create the Custom Excerpts callback
-function html5wp_excerpt($length_callback = '', $more_callback = '')
+// Create the Custom Excerpts length
+function moneyhero_excerpt($length, $link = false)
 {
     global $post;
-    if (function_exists($length_callback)) {
-        add_filter('excerpt_length', $length_callback);
-    }
-    if (function_exists($more_callback)) {
-        add_filter('excerpt_more', $more_callback);
-    }
     $output = get_the_excerpt();
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
-    $output = '<p>' . $output . '</p>';
+    $output = '<p>' . trim(mb_substr($output, 0, $length, 'UTF-8')) . ( $link == true ? '<a class="view-article" href="' . get_permalink($post->ID) . '">...' . __('Weiterlesen', 'geldhelden') . '</a>' : '' ) . '</p>';
     echo $output;
 }
+
+function my_custom_excerpt( $length ) {
+    $custom = get_theme_mod( 'custom_excerpt_length' );
+    if( $custom != '' ) {
+        return $length = intval( $custom );
+    } else {
+        return $length;
+    }
+}
+add_filter( 'excerpt_length', 'my_custom_excerpt', 999 );
 
 // Custom View Article link to Post
 function html5_blank_view_article($more)
 {
     global $post;
-    return '... <a class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
-}
-
-// Remove Admin bar
-function remove_admin_bar()
-{
-    return false;
+    return '<a class="view-article" href="' . get_permalink($post->ID) . '">...' . __('Weiterlesen', 'geldhelden') . '</a>';
 }
 
 // Remove 'text/css' from our enqueued stylesheet
@@ -276,6 +308,7 @@ function enable_threaded_comments()
 // Custom Comments Callback
 function html5blankcomments($comment, $args, $depth)
 {
+
 	$GLOBALS['comment'] = $comment;
 	extract($args, EXTR_SKIP);
 
@@ -293,29 +326,46 @@ function html5blankcomments($comment, $args, $depth)
 	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
-	</div>
-<?php if ($comment->comment_approved == '0') : ?>
-	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
-	<br />
-<?php endif; ?>
+        <?php 
+        $profile_img = get_user_meta( $comment->user_id, 'profile_img', true );
+        if ($profile_img){ echo "<img src='" . esc_url_raw($profile_img) . "' height='96' width='96' loading='lazy' class='avatar avatar-96 photo'>"; } 
+        ?>
+        <div class="commtent-details">
+            <?php printf(__('<cite class="fn">%s</cite> <span class="time-elapsed">%s</span>', 'geldhelden'), get_comment_author_link(), smk_get_comment_time(get_comment_ID())) ?>
+            <div class="comment-content">
+                <?php if ($comment->comment_approved == '0') : ?>
+                    <em class="comment-awaiting-moderation"><?php _e('Ihr Kommentar wartet auf die Freischaltung.', 'geldhelden') ?></em>
+                    <br />
+                <?php endif; ?>
 
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
-	</div>
+                <?php comment_text() ?>
 
-	<?php comment_text() ?>
-
-	<div class="reply">
-	<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                <div class="reply">
+                    <?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                </div>
+            </div>
+        </div>
 	</div>
 	<?php if ( 'div' != $args['style'] ) : ?>
 	</div>
 	<?php endif; ?>
 <?php }
+
+/* Add GA variable */
+function create_analytics_link( $link ){
+
+    $site_title = get_bloginfo( 'name' );
+    $site_title = str_replace( ' ', '', $site_title );
+
+    $new_link = add_query_arg( array(
+        'utm_source' => esc_attr($site_title),
+        'utm_medium' => 'theme',
+        'utm_campaign' => 'theme'
+    ), $link );
+
+    return esc_url_raw( $new_link );
+
+}
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -356,10 +406,74 @@ add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove 
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
+
+// Require: Report Articles Form
+require_once(GELDHELDEN_DIR .'/backend/report-articles-form.php');
+
+// Require: Theme settings
+require_once(GELDHELDEN_DIR .'/backend/theme-settings.php');
+
+// Require: Profile img
+require_once(GELDHELDEN_DIR .'/backend/add-profile-img.php');
+
+// Add Footer Widget Areas
+function theme_slug_register_footer_widgets() {
+	// Register Footer Column 1 widget area.
+	register_sidebar( array(
+		'name' => __( 'Footer Column 1', 'geldhelden' ),
+		'id' => 'footer-1',
+		'description' => __( 'Appears on the first footer column.', 'geldhelden' ),
+		'before_widget' => '<aside id="%1$s" class="footer-block-1 widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	// Register Footer Column 2 widget area.
+	register_sidebar( array(
+		'name' => __( 'Footer Column 2', 'geldhelden' ),
+		'id' => 'footer-2',
+		'description' => __( 'Appears on the second footer column.', 'geldhelden' ),
+		'before_widget' => '<aside id="%1$s" class="footer-block-2 widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	// Register Footer Column 3 widget area.
+	register_sidebar( array(
+		'name' => __( 'Footer Column 3', 'geldhelden' ),
+		'id' => 'footer-3',
+		'description' => __( 'Appears on the third footer column.', 'geldhelden' ),
+		'before_widget' => '<aside id="%1$s" class="footer-block-3 widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	// Register Footer Column 3 widget area.
+	register_sidebar( array(
+		'name' => __( 'Footer Column 3', 'geldhelden' ),
+		'id' => 'footer-3',
+		'description' => __( 'Appears on the third footer column.', 'geldhelden' ),
+		'before_widget' => '<aside id="%1$s" class="footer-block-3 widget %2$s clearfix">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'theme_slug_register_footer_widgets', 20 );
+
+// Time Elapsed
+function smk_get_comment_time( $comment_id = 0 ){
+    return sprintf( 
+        _x( '%s', 'Human-readable time', 'geldhelden' ), 
+        human_time_diff( 
+            get_comment_date( 'U', $comment_id ), 
+            current_time( 'timestamp' ) 
+        ) 
+    );
+}
