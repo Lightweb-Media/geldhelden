@@ -3,7 +3,7 @@
 	Theme Name: MoneyHero
 	Theme URI: https://github/Lightweb-Media/moneyhero
 	Description: MoneyHero Theme 
-	Version: 2.1.5
+	Version: 2.1.6
 	Author: Lightweb Media
 	Author URI: https://lightweb-media.de
 	Tags: Blank, HTML5, CSS3
